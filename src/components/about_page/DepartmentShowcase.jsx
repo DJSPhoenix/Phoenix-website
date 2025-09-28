@@ -90,7 +90,7 @@ const DepartmentShowcase = ({ items = [], fallbackImage }) => {
     <section className="py-12 sm:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div
-          className="text-center lg:text-left mb-8 sm:mb-10"
+          className="text-center mb-8 sm:mb-10"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -99,7 +99,7 @@ const DepartmentShowcase = ({ items = [], fallbackImage }) => {
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
             Departments Overview
           </h2>
-          <p className="font-body text-base sm:text-lg text-gray-400 max-w-2xl mx-auto lg:mx-0 px-4 lg:px-0">
+          <p className="font-body text-base sm:text-lg text-gray-400 max-w-2xl mx-auto px-4">
             Four pillars that power our research, innovation and competition
             success.
           </p>

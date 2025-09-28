@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { FaLinkedin } from "react-icons/fa";
 import Logo from "../../assets/Logo.png";
 
-const BlogCard = ({ title, excerpt, image, linkedinUrl }) => {
+const PostsCard = ({ title, excerpt, image, linkedinUrl }) => {
   const handleShare = () => {
     if (linkedinUrl) {
       window.open(linkedinUrl, "_blank");
@@ -69,4 +69,4 @@ const BlogCard = ({ title, excerpt, image, linkedinUrl }) => {
   );
 };
 
-export default BlogCard;
+export default PostsCard;

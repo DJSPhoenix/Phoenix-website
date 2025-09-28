@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { HiLocationMarker, HiMail, HiPhone } from "react-icons/hi";
@@ -44,6 +44,21 @@ const LocationMap = () => {
     },
   };
 
+  const leftCardRef = useRef(null);
+  const [mapHeight, setMapHeight] = useState(320);
+
+  useEffect(() => {
+    const updateHeights = () => {
+      const leftHeight = leftCardRef.current?.offsetHeight;
+      if (leftHeight && Number.isFinite(leftHeight)) {
+        setMapHeight(leftHeight);
+      }
+    };
+    updateHeights();
+    window.addEventListener("resize", updateHeights);
+    return () => window.removeEventListener("resize", updateHeights);
+  }, []);
+
   return (
     <section className="py-12 sm:py-20 bg-black relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/50 to-black"></div>
@@ -57,21 +72,24 @@ const LocationMap = () => {
       >
         {/* Header */}
         <motion.div
-          className="text-center lg:text-left mb-12 sm:mb-16"
+          className="text-center mb-12 sm:mb-16"
           variants={itemVariants}
         >
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
             Where to Find Us
           </h2>
-          <p className="font-body text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto lg:mx-0 px-4 lg:px-0">
+          <p className="font-body text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4">
             Our workspace at DJ Sanghvi College of Engineering, Mumbai.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-stretch">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-start">
           {/* Address & Contact Info */}
           <motion.div variants={itemVariants}>
-            <div className="bg-white/5 backdrop-blur-md border border-white/15 rounded-2xl p-6 sm:p-8 h-full flex flex-col">
+            <div
+              ref={leftCardRef}
+              className="bg-white/5 backdrop-blur-md border border-white/15 rounded-2xl p-6 sm:p-8 flex flex-col"
+            >
               <div className="flex items-center gap-3 mb-4 sm:mb-6">
                 <div className="w-10 sm:w-12 h-10 sm:h-12 bg-orange-500/20 rounded-xl flex items-center justify-center">
                   <HiLocationMarker className="w-5 sm:w-6 h-5 sm:h-6 text-orange-400" />
@@ -108,8 +126,11 @@ const LocationMap = () => {
 
           {/* Map */}
           <motion.div variants={itemVariants}>
-            <div className="bg-white/5 backdrop-blur-md border border-white/15 rounded-2xl overflow-hidden h-full flex flex-col">
-              <div className="flex-1 w-full relative min-h-[300px] sm:min-h-[400px]">
+            <div
+              className="bg-white/5 backdrop-blur-md border border-white/15 rounded-2xl overflow-hidden flex flex-col"
+              style={{ height: mapHeight }}
+            >
+              <div className="w-full relative flex-1">
                 <MapContainer
                   center={position}
                   zoom={16}

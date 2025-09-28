@@ -67,7 +67,7 @@ const SiteFooter = ({
       { label: "Fleet", href: "/fleet" },
       { label: "Team", href: "/team" },
       { label: "Achievements", href: "/achievements" },
-      { label: "Blog", href: "/blog" },
+      { label: "Posts", href: "/posts" },
       { label: "Support Us", href: "/support" },
     ],
     []

@@ -5,7 +5,7 @@ import blog4 from "../../assets/blogs/blog-4.jpeg";
 import blog5 from "../../assets/blogs/blog-5.jpeg";
 import blog6 from "../../assets/blogs/blog-6.jpeg";
 
-export const blogData = [
+export const postsData = [
   {
     title: "Nine Years of Flight, Firsts, and Feats!",
     excerpt:

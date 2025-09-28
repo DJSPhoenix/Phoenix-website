@@ -52,11 +52,11 @@ const StatsCounter = ({ items = [], durationMs = 1200 }) => {
   return (
     <section className="py-12 sm:py-16" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="text-center lg:text-left mb-6 sm:mb-8">
+        <div className="text-center mb-6 sm:mb-8">
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3">
             Our Impact in Numbers
           </h2>
-          <p className="font-body text-base sm:text-lg text-gray-400 max-w-2xl mx-auto lg:mx-0 px-4 lg:px-0">
+          <p className="font-body text-base sm:text-lg text-gray-400 max-w-2xl mx-auto px-4">
             These numbers represent our commitment to excellence and growth.
           </p>
         </div>

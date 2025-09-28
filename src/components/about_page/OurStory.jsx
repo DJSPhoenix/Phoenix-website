@@ -5,11 +5,11 @@ const OurStory = ({ paragraphs = [] }) => {
   return (
     <section className="py-12 sm:py-16">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
-        <div className="text-center lg:text-left mb-8 sm:mb-10">
+        <div className="text-center mb-8 sm:mb-10">
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
             Our Story
           </h2>
-          <p className="font-body text-base sm:text-lg text-gray-400 max-w-2xl mx-auto lg:mx-0 px-4 lg:px-0">
+          <p className="font-body text-base sm:text-lg text-gray-400 max-w-2xl mx-auto px-4">
             The journey behind our passion and persistence.
           </p>
         </div>

@@ -20,7 +20,7 @@ const Navbar = ({ currentPage = "Home" }) => {
     { to: "/fleet", label: "Fleet" },
     { to: "/team", label: "Team" },
     { to: "/achievements", label: "Achievements" },
-    { to: "/blog", label: "Blog" },
+    { to: "/posts", label: "Posts" },
     { to: "/support", label: "Support Us" },
   ];
 

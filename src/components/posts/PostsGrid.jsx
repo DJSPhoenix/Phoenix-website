@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-import BlogCard from "./BlogCard";
-import { blogData } from "./blogData";
+import PostsCard from "./PostsCard";
+import { postsData } from "./postsData";
 
-const BlogGrid = () => {
+const PostsGrid = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -35,9 +35,9 @@ const BlogGrid = () => {
         initial="hidden"
         animate="visible"
       >
-        {blogData.map((post, index) => (
+        {postsData.map((post, index) => (
           <motion.div key={index} variants={itemVariants}>
-            <BlogCard
+            <PostsCard
               title={post.title}
               excerpt={post.excerpt}
               image={post.image}
@@ -50,4 +50,4 @@ const BlogGrid = () => {
   );
 };
 
-export default BlogGrid;
+export default PostsGrid;
