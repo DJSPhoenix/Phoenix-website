@@ -91,6 +91,14 @@ const Navbar = ({ currentPage = "Home" }) => {
           </motion.div>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
+              to="/blog"
+              className="px-4 py-3 text-sm font-medium text-gray-300 hover:text-white transition-colors ui-text"
+            >
+              Blog
+            </Link>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link
               to="/support"
               className="px-4 py-3 text-sm font-medium text-gray-300 hover:text-white transition-colors ui-text"
             >

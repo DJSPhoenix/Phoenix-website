@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Achievements from "./pages/Achievements";
 import Team from "./pages/Team";
 import Fleet from "./pages/Fleet";
+import Blog from "./pages/Blog";
 import SiteFooter from "./components/common/SiteFooter";
 import About from "./pages/About";
 import Support from "./pages/Support";
@@ -62,6 +63,7 @@ const App = () => {
             <Route path="/achievements" element={<Achievements />} />
             <Route path="/fleet" element={<Fleet />} />
             <Route path="/team" element={<Team />} />
+            <Route path="/blog" element={<Blog />} />
             <Route path="/about" element={<About />} />
             <Route path="/support" element={<Support />} />
             <Route
