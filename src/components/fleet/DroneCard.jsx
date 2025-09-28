@@ -25,7 +25,7 @@ const DroneCard = ({ drone, index }) => {
       }}
     >
       {/* Media */}
-      <div className="relative h-56 md:h-64 w-full overflow-hidden">
+      <div className="relative h-48 sm:h-56 md:h-64 w-full overflow-hidden">
         {drone.image ? (
           <>
             <img
@@ -42,27 +42,27 @@ const DroneCard = ({ drone, index }) => {
         ) : (
           <div className="w-full h-full bg-gray-900/80 border-b border-white/10 flex items-center justify-center">
             <div className="text-center">
-              <div className="ui-text inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] bg-yellow-500/15 border border-yellow-400/40 text-yellow-200 mb-2">
+              <div className="ui-text inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] sm:text-[11px] bg-yellow-500/15 border border-yellow-400/40 text-yellow-200 mb-2">
                 WIP
               </div>
-              <div className="font-body text-gray-400 text-sm">
+              <div className="font-body text-gray-400 text-xs sm:text-sm">
                 Image coming soon
               </div>
             </div>
           </div>
         )}
         {drone.wip && drone.image && (
-          <div className="absolute top-3 left-3 ui-text px-2.5 py-1 rounded-full text-[11px] bg-yellow-500/20 border border-yellow-400/50 text-yellow-200">
+          <div className="absolute top-2 sm:top-3 left-2 sm:left-3 ui-text px-2 sm:px-2.5 py-1 rounded-full text-[10px] sm:text-[11px] bg-yellow-500/20 border border-yellow-400/50 text-yellow-200">
             WIP
           </div>
         )}
       </div>
 
       {/* Content */}
-      <div className="relative z-10 p-5">
-        <div className="flex items-start justify-between gap-3">
-          <div>
-            <h3 className="font-display text-xl md:text-2xl font-bold text-white leading-snug">
+      <div className="relative z-10 p-4 sm:p-5">
+        <div className="flex items-start justify-between gap-2 sm:gap-3">
+          <div className="flex-1 min-w-0">
+            <h3 className="font-display text-lg sm:text-xl md:text-2xl font-bold text-white leading-snug">
               {drone.name}
             </h3>
             <div className="ui-text text-xs text-gray-300 mt-1">
@@ -73,7 +73,7 @@ const DroneCard = ({ drone, index }) => {
             type="button"
             onClick={() => setExpanded((v) => !v)}
             aria-expanded={expanded}
-            className={`ui-text inline-flex items-center gap-2 px-4 md:px-5 py-2 md:py-2.5 rounded-full text-sm border transition-all
+            className={`ui-text inline-flex items-center gap-1 sm:gap-2 px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-2.5 rounded-full text-xs sm:text-sm border transition-all flex-shrink-0
               ${
                 expanded
                   ? "border-orange-500 bg-orange-500/10 text-white shadow-[0_0_20px_rgba(255,140,0,0.2)]"
@@ -81,7 +81,10 @@ const DroneCard = ({ drone, index }) => {
               }
             `}
           >
-            <span>{expanded ? "Hide specs" : "View specs"}</span>
+            <span className="hidden sm:inline">
+              {expanded ? "Hide specs" : "View specs"}
+            </span>
+            <span className="sm:hidden">{expanded ? "Hide" : "View"}</span>
             <span
               className={`transition-transform duration-300 ${
                 expanded ? "rotate-180" : "rotate-0"
@@ -101,9 +104,9 @@ const DroneCard = ({ drone, index }) => {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.25, ease: "easeOut" }}
-              className="mt-4 pt-4 border-t border-white/10"
+              className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-white/10"
             >
-              <div className="grid grid-cols-2 gap-3 text-sm text-gray-300 font-body">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 text-xs sm:text-sm text-gray-300 font-body">
                 {Object.entries(drone.specs || {}).map(([k, v]) => (
                   <div
                     key={k}

@@ -138,21 +138,24 @@ const CompetitionsSection = () => {
       <div className="absolute inset-0 opacity-0"></div>
 
       <motion.div
-        className="relative z-10 max-w-7xl mx-auto px-6 py-20"
+        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-20"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
         {/* Header */}
-        <motion.div className="text-center mb-8" variants={headerVariants}>
-          <h2 className="font-display text-5xl md:text-6xl font-bold text-white mb-4">
+        <motion.div
+          className="text-center mb-8 sm:mb-12"
+          variants={headerVariants}
+        >
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             Plans for
-            <span className="block text-3xl md:text-3xl text-[#ff8c00] font-bold mt-2">
+            <span className="block text-2xl sm:text-3xl md:text-3xl text-[#ff8c00] font-bold mt-2">
               2024-2025
             </span>
           </h2>
-          <p className="font-body text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="font-body text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4">
             Showcasing our journey through innovation challenges and
             technological breakthroughs
           </p>
@@ -163,7 +166,7 @@ const CompetitionsSection = () => {
           >
             <Link to="/achievements">
               <motion.button
-                className="group relative px-8 py-4 bg-gradient-to-r from-[#ff8c00] to-orange-600 text-white font-ui font-bold text-lg rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-[#ff8c00]/25 cursor-pointer"
+                className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#ff8c00] to-orange-600 text-white font-ui font-bold text-base sm:text-lg rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-[#ff8c00]/25 cursor-pointer"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -175,7 +178,7 @@ const CompetitionsSection = () => {
         </motion.div>
 
         {/* Competitions Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16">
           {competitions.map((competition, index) => {
             const accentColor = getAccentColor(competition.status);
 
@@ -183,7 +186,7 @@ const CompetitionsSection = () => {
               return (
                 <motion.div
                   key={competition.id}
-                  className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-orange-500/60 transition-all hover:shadow-2xl hover:shadow-orange-500/30 min-h-56 md:min-h-64 p-4 w-full"
+                  className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-orange-500/60 transition-all hover:shadow-2xl hover:shadow-orange-500/30 min-h-48 sm:min-h-56 md:min-h-64 p-3 sm:p-4 w-full"
                   initial={{ opacity: 0, y: 12, scale: 0.98 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   viewport={{ once: true, amount: 0.3 }}
@@ -208,20 +211,20 @@ const CompetitionsSection = () => {
                   </div>
 
                   {/* Content */}
-                  <div className="relative z-10 p-6 md:p-7">
-                    <div className="flex items-center gap-4 md:gap-5 mb-4">
+                  <div className="relative z-10 p-4 sm:p-6 md:p-7">
+                    <div className="flex items-center gap-3 sm:gap-4 md:gap-5 mb-3 sm:mb-4">
                       <div>
-                        <div className="font-display text-xl md:text-2xl font-bold text-white leading-snug">
+                        <div className="font-display text-lg sm:text-xl md:text-2xl font-bold text-white leading-snug">
                           {competition.name}
                         </div>
-                        <div className="ui-text text-xs md:text-sm text-neutral-400 mt-0.5">
+                        <div className="ui-text text-xs sm:text-xs md:text-sm text-neutral-400 mt-0.5">
                           {competition.date}
                         </div>
                       </div>
                     </div>
                     <div className="mb-3 flex items-center gap-2 ui-text">
                       <span
-                        className="ui-text inline-block text-[10px] md:text-xs tracking-wide px-2.5 py-0.5 rounded-full text-white"
+                        className="ui-text inline-block text-[9px] sm:text-[10px] md:text-xs tracking-wide px-2 sm:px-2.5 py-0.5 rounded-full text-white"
                         style={{
                           background: `linear-gradient(90deg, hsla(${
                             accentColor.hue
@@ -232,19 +235,19 @@ const CompetitionsSection = () => {
                       >
                         {competition.category}
                       </span>
-                      <span className="ui-text inline-block text-[10px] md:text-xs tracking-wide px-2.5 py-0.5 rounded-full border border-neutral-700 text-neutral-300">
+                      <span className="ui-text inline-block text-[9px] sm:text-[10px] md:text-xs tracking-wide px-2 sm:px-2.5 py-0.5 rounded-full border border-neutral-700 text-neutral-300">
                         {competition.status}
                       </span>
                     </div>
-                    <p className="font-body text-[15px] md:text-base text-neutral-200 leading-7">
+                    <p className="font-body text-sm sm:text-[15px] md:text-base text-neutral-200 leading-6 sm:leading-7">
                       {competition.description}
                     </p>
 
                     {/* Achievement Badge for Completed */}
                     {competition.achievement && (
-                      <div className="mt-4 inline-flex items-center space-x-2 px-4 py-2 bg-green-500/20 border border-green-400/30 rounded-full">
-                        <GiLaurelCrown className="w-4 h-4 text-green-400" />
-                        <span className="font-ui font-bold text-green-400 text-sm">
+                      <div className="mt-3 sm:mt-4 inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-green-500/20 border border-green-400/30 rounded-full">
+                        <GiLaurelCrown className="w-3 sm:w-4 h-3 sm:h-4 text-green-400" />
+                        <span className="font-ui font-bold text-green-400 text-xs sm:text-sm">
                           {competition.achievement}
                         </span>
                       </div>

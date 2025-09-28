@@ -106,10 +106,10 @@ const HeroContent = () => {
       animate="visible"
     >
       {/* Hero Content */}
-      <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
+      <div className="relative z-10 text-center px-4 sm:px-6 max-w-6xl mx-auto">
         {/* Team Name - Hero Title */}
         <motion.h1
-          className="font-display text-6xl md:text-8xl lg:text-9xl font-bold text-white mb-6 leading-none tracking-tight"
+          className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl font-bold text-white mb-4 sm:mb-6 leading-none tracking-tight"
           variants={titleVariants}
         >
           <motion.span className="block" variants={titleVariants}>
@@ -122,7 +122,7 @@ const HeroContent = () => {
 
         {/* Slogan/Tagline */}
         <motion.p
-          className="font-body text-xl md:text-2xl lg:text-3xl text-white mb-8 max-w-4xl mx-auto leading-relaxed"
+          className="font-body text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-white mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed px-2"
           variants={titleVariants}
         >
           Where music meets innovation, and every beat tells a story
@@ -130,7 +130,7 @@ const HeroContent = () => {
 
         {/* Established Date - Redesigned with enhanced animations */}
         <motion.div
-          className="mb-12 flex items-center justify-center"
+          className="mb-8 sm:mb-12 flex items-center justify-center"
           variants={badgeVariants}
         >
           <motion.div
@@ -138,10 +138,10 @@ const HeroContent = () => {
             whileHover="hover"
             variants={badgeVariants}
           >
-            <div className="relative bg-black/20 border border-white/30 rounded-full px-6 py-3">
-              <div className="flex items-center space-x-3">
+            <div className="relative bg-black/20 border border-white/30 rounded-full px-4 sm:px-6 py-2 sm:py-3">
+              <div className="flex items-center space-x-2 sm:space-x-3">
                 <motion.div
-                  className="w-2 h-2 bg-[#ff8c00] rounded-full"
+                  className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-[#ff8c00] rounded-full"
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{
                     duration: 2,
@@ -149,11 +149,11 @@ const HeroContent = () => {
                     ease: "easeInOut",
                   }}
                 ></motion.div>
-                <span className="font-ui font-bold text-white text-lg tracking-wide">
+                <span className="font-ui font-bold text-white text-sm sm:text-lg tracking-wide">
                   Est. 2017
                 </span>
                 <motion.div
-                  className="w-2 h-2 bg-[#ff8c00] rounded-full"
+                  className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-[#ff8c00] rounded-full"
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{
                     duration: 2,
@@ -168,10 +168,10 @@ const HeroContent = () => {
         </motion.div>
 
         {/* Call-to-Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-4">
           <Link to="/fleet">
             <motion.button
-              className="px-8 py-4 border-2 border-[#ff8c00] bg-[#ff8c00] text-black font-ui font-bold text-lg rounded-lg transition-all duration-300 hover:brightness-110 hover:shadow-lg hover:shadow-orange-500/20 cursor-pointer"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border-2 border-[#ff8c00] bg-[#ff8c00] text-black font-ui font-bold text-base sm:text-lg rounded-lg transition-all duration-300 hover:brightness-110 hover:shadow-lg hover:shadow-orange-500/20 cursor-pointer"
               variants={buttonVariants}
               whileHover="hover"
             >
@@ -181,7 +181,7 @@ const HeroContent = () => {
 
           <Link to="/about">
             <motion.button
-              className="px-8 py-4 border-2 border-gray-300 bg-gray-300 text-black font-ui font-bold text-lg rounded-lg transition-all duration-300 hover:bg-white hover:text-black cursor-pointer"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border-2 border-gray-300 bg-gray-300 text-black font-ui font-bold text-base sm:text-lg rounded-lg transition-all duration-300 hover:bg-white hover:text-black cursor-pointer"
               variants={buttonVariantsRight}
               whileHover="hover"
             >
@@ -192,7 +192,7 @@ const HeroContent = () => {
 
         {/* Social Links */}
         <motion.div
-          className="flex justify-center items-center gap-6 text-white/70"
+          className="flex justify-center items-center gap-4 sm:gap-6 text-white/70"
           variants={socialVariants}
         >
           <motion.a
@@ -201,7 +201,7 @@ const HeroContent = () => {
             whileHover={{ scale: 1.1, rotate: 5 }}
             transition={{ duration: 0.2 }}
           >
-            <MdEmail className="w-8 h-8" />
+            <MdEmail className="w-6 h-6 sm:w-8 sm:h-8" />
           </motion.a>
           <motion.a
             href="https://www.instagram.com/djs_phoenix/"
@@ -209,7 +209,7 @@ const HeroContent = () => {
             whileHover={{ scale: 1.1, rotate: -5 }}
             transition={{ duration: 0.2 }}
           >
-            <FaInstagram className="w-8 h-8" />
+            <FaInstagram className="w-6 h-6 sm:w-8 sm:h-8" />
           </motion.a>
           <motion.a
             href="https://www.linkedin.com/company/djs-phoenix"
@@ -217,7 +217,7 @@ const HeroContent = () => {
             whileHover={{ scale: 1.1, rotate: 5 }}
             transition={{ duration: 0.2 }}
           >
-            <FaLinkedin className="w-8 h-8" />
+            <FaLinkedin className="w-6 h-6 sm:w-8 sm:h-8" />
           </motion.a>
         </motion.div>
       </div>

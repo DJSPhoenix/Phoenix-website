@@ -35,7 +35,7 @@ const Row = ({ item, index }) => {
         <div
           className={`${
             isEven ? "order-1" : "order-2"
-          } relative h-full min-h-[16rem] md:min-h-[360px] lg:min-h-[420px]`}
+          } relative h-full min-h-[12rem] sm:min-h-[16rem] md:min-h-[360px] lg:min-h-[420px]`}
         >
           <div
             className="absolute inset-0"
@@ -56,24 +56,24 @@ const Row = ({ item, index }) => {
 
         {/* Content side */}
         <div className={`${isEven ? "order-2" : "order-1"} flex`}>
-          <div className="p-6 md:p-10 lg:p-12 flex flex-col justify-center">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 bg-[#ff8c00]/20 rounded-xl flex items-center justify-center">
+          <div className="p-4 sm:p-6 md:p-10 lg:p-12 flex flex-col justify-center">
+            <div className="flex items-center gap-3 mb-3 sm:mb-4">
+              <div className="w-10 sm:w-12 h-10 sm:h-12 bg-[#ff8c00]/20 rounded-xl flex items-center justify-center">
                 {(() => {
                   const key = (item.iconKey || item.title || "")
                     .toString()
                     .toLowerCase();
                   const Icon = iconMap[key];
                   return Icon ? (
-                    <Icon className="w-6 h-6 text-[#ff8c00]" />
+                    <Icon className="w-5 sm:w-6 h-5 sm:h-6 text-[#ff8c00]" />
                   ) : null;
                 })()}
               </div>
-              <h3 className="font-display text-2xl md:text-3xl font-bold text-white">
+              <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-white">
                 {item.title}
               </h3>
             </div>
-            <p className="font-body text-gray-300 leading-relaxed whitespace-pre-line">
+            <p className="font-body text-sm sm:text-base text-gray-300 leading-relaxed whitespace-pre-line">
               {item.description}
             </p>
           </div>
@@ -87,25 +87,25 @@ const DepartmentShowcase = ({ items = [], fallbackImage }) => {
   const safeItems = Array.isArray(items) ? items.filter(Boolean) : [];
 
   return (
-    <section className="py-16">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-12 sm:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div
-          className="text-center mb-10"
+          className="text-center lg:text-left mb-8 sm:mb-10"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, ease: [0.25, 0.25, 0, 1] }}
         >
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
             Departments Overview
           </h2>
-          <p className="font-body text-gray-400 max-w-2xl mx-auto">
+          <p className="font-body text-base sm:text-lg text-gray-400 max-w-2xl mx-auto lg:mx-0 px-4 lg:px-0">
             Four pillars that power our research, innovation and competition
             success.
           </p>
         </motion.div>
       </div>
-      <div className="max-w-7xl mx-auto px-6 space-y-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-8 sm:space-y-10">
         {safeItems.map((raw, idx) => {
           const item = {
             ...raw,

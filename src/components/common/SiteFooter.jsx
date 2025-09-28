@@ -108,13 +108,13 @@ const SiteFooter = ({
               {marqueeLogos.map((s, idx) => (
                 <div
                   key={`${s.name}-${idx}`}
-                  className="px-6 flex items-center opacity-95 hover:opacity-100 transition-opacity"
+                  className="px-4 sm:px-6 flex items-center opacity-95 hover:opacity-100 transition-opacity"
                   title={s.name}
                 >
                   <img
                     src={s.logo}
                     alt={s.name}
-                    className="h-7 w-[120px] object-contain"
+                    className="h-5 sm:h-7 w-[80px] sm:w-[120px] object-contain"
                     loading="lazy"
                     style={{
                       filter:
@@ -131,7 +131,7 @@ const SiteFooter = ({
           </div>
         ) : (
           <div className="border-b border-white/10">
-            <div className="container mx-auto px-6 py-3 flex flex-wrap items-center justify-center gap-6">
+            <div className="container mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-center gap-4 sm:gap-6">
               {displaySponsors.map((s, idx) => (
                 <div
                   key={`${s.name}-${idx}`}
@@ -141,7 +141,7 @@ const SiteFooter = ({
                   <img
                     src={s.logo}
                     alt={s.name}
-                    className="h-7 w-[120px] object-contain"
+                    className="h-5 sm:h-7 w-[80px] sm:w-[120px] object-contain"
                     loading="lazy"
                     style={{
                       filter:
@@ -158,23 +158,23 @@ const SiteFooter = ({
           </div>
         ))}
 
-      <div className="container mx-auto px-6 py-6">
-        <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-4 text-sm text-gray-300">
+      <div className="container mx-auto px-4 sm:px-6 py-6">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-6 text-sm text-gray-300">
           {/* Left: Team logo + nav links */}
-          <div className="flex items-center gap-4 min-w-0">
+          <div className="flex flex-col sm:flex-row items-center gap-4 min-w-0">
             <Link to="/" className="inline-flex items-center">
               <img
                 src={TeamLogo}
                 alt="DJS Phoenix"
-                className="h-8 md:h-9 w-auto object-contain"
+                className="h-6 sm:h-8 md:h-9 w-auto object-contain"
               />
             </Link>
-            <nav className="flex items-center gap-4 ui-text">
+            <nav className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 ui-text">
               {linksToRender.map((link) => (
                 <Link
                   key={link.href}
                   to={link.href}
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="text-gray-300 hover:text-white transition-colors text-xs sm:text-sm"
                 >
                   {link.label}
                 </Link>
@@ -184,7 +184,7 @@ const SiteFooter = ({
 
           {/* Grid fallback (optional explicit grid mode) */}
           {showSponsors && sponsorDisplay === "grid" && sponsorCount > 0 && (
-            <div className="grid grid-cols-2 md:grid-cols-4 items-center gap-4 md:gap-6 mx-auto">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 items-center gap-3 sm:gap-4 md:gap-6 mx-auto">
               {displaySponsors.map((s, idx) => (
                 <div
                   key={`${s.name}-${idx}`}
@@ -194,7 +194,7 @@ const SiteFooter = ({
                   <img
                     src={s.logo}
                     alt={s.name}
-                    className="h-6 w-[120px] object-contain"
+                    className="h-5 sm:h-6 w-[80px] sm:w-[120px] object-contain"
                     loading="lazy"
                     style={{
                       filter:
@@ -211,8 +211,10 @@ const SiteFooter = ({
           )}
 
           {/* Meta (right) */}
-          <div className="flex items-center gap-2 ml-auto">
-            <span className="text-gray-400">© {year} DJS PHOENIX</span>
+          <div className="flex items-center gap-2">
+            <span className="text-gray-400 text-xs sm:text-sm">
+              © {year} DJS PHOENIX
+            </span>
           </div>
         </div>
       </div>

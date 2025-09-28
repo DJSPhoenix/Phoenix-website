@@ -10,7 +10,7 @@ export function ExpandableCardDemo() {
   const TeamCard = ({ card, index }) => (
     <motion.div
       key={card.title}
-      className="group relative bg-black border border-gray-800 rounded-3xl p-8 hover:border-orange-500 hover:shadow-2xl hover:shadow-orange-500/30 hover:-translate-y-3 hover:scale-[1.05] transition-all duration-300 overflow-hidden"
+      className="group relative bg-black border border-gray-800 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 hover:border-orange-500 hover:shadow-2xl hover:shadow-orange-500/30 hover:-translate-y-2 sm:hover:-translate-y-3 hover:scale-[1.02] sm:hover:scale-[1.05] transition-all duration-300 overflow-hidden"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.05 }}
@@ -19,8 +19,8 @@ export function ExpandableCardDemo() {
       <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-orange-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
       {/* Profile Image - Circular */}
-      <div className="relative mb-8 flex justify-center">
-        <div className="relative overflow-hidden rounded-full w-48 h-48">
+      <div className="relative mb-4 sm:mb-6 md:mb-8 flex justify-center">
+        <div className="relative overflow-hidden rounded-full w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48">
           <img
             src={card.src}
             alt={card.title}
@@ -33,26 +33,27 @@ export function ExpandableCardDemo() {
       <div className="relative z-10">
         <div className="flex items-center justify-between">
           {/* Left side - Name and Position */}
-          <div className="flex-1 text-left space-y-2">
-            <h3 className="font-ui font-bold text-white text-1xl">
+          <div className="flex-1 text-left space-y-1 sm:space-y-2">
+            <h3 className="font-ui font-bold text-white text-sm sm:text-base md:text-lg">
               {card.title}
             </h3>
-            <p className="font-body text-orange-400 text-sm font-medium">
+            <p className="font-body text-orange-400 text-xs sm:text-sm font-medium">
               {card.description}
             </p>
           </div>
 
           {/* Right side - Simple LinkedIn icon */}
-          <div className="flex items-center justify-center ml-4">
+          <div className="flex items-center justify-center ml-2 sm:ml-4">
             <motion.a
               href={card.linkedinLink || "https://linkedin.com"}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300"
+              className="w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              <FaLinkedin size={40} />
+              <FaLinkedin size={24} className="sm:hidden" />
+              <FaLinkedin size={32} className="hidden sm:block" />
             </motion.a>
           </div>
         </div>
@@ -61,9 +62,9 @@ export function ExpandableCardDemo() {
   );
 
   return (
-    <div className="max-w-7xl mx-auto w-full">
+    <div className="max-w-7xl mx-auto w-full px-4 sm:px-6">
       {/* Unified Team Grid - No Filters */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
         {allTeamCards.map((card, index) => (
           <TeamCard key={card.title} card={card} index={index} />
         ))}

@@ -61,8 +61,8 @@ const FAQ = ({ items }) => {
   };
 
   return (
-    <section className="container mx-auto px-6 max-w-5xl py-12">
-      <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6 text-center">
+    <section className="container mx-auto px-4 sm:px-6 max-w-5xl py-8 sm:py-12">
+      <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6 text-center">
         FAQ
       </h2>
       <div className="max-w-3xl mx-auto space-y-3">
@@ -76,13 +76,15 @@ const FAQ = ({ items }) => {
               }`}
             >
               <button
-                className="w-full text-left px-5 py-4 flex items-center justify-between transition-colors cursor-pointer"
+                className="w-full text-left px-4 sm:px-5 py-3 sm:py-4 flex items-center justify-between transition-colors cursor-pointer"
                 onClick={() => setOpen(isOpen ? null : idx)}
                 aria-expanded={isOpen}
               >
-                <span className="text-white font-medium">{qa.q}</span>
+                <span className="text-white font-medium text-sm sm:text-base pr-2">
+                  {qa.q}
+                </span>
                 <span
-                  className={`text-gray-300 transition-transform duration-300 ${
+                  className={`text-gray-300 transition-transform duration-300 text-lg sm:text-xl ${
                     isOpen ? "rotate-45" : "rotate-0"
                   }`}
                 >
@@ -90,8 +92,8 @@ const FAQ = ({ items }) => {
                 </span>
               </button>
               <div
-                className={`px-5 text-gray-300 overflow-hidden transition-all duration-500 ease-in-out ${
-                  isOpen ? "opacity-100 pb-4" : "opacity-0 pb-0"
+                className={`px-4 sm:px-5 text-gray-300 overflow-hidden transition-all duration-500 ease-in-out text-sm sm:text-base ${
+                  isOpen ? "opacity-100 pb-3 sm:pb-4" : "opacity-0 pb-0"
                 }`}
                 style={{
                   maxHeight: isOpen ? "500px" : "0px",

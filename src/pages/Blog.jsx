@@ -55,16 +55,16 @@ const Blog = () => {
         variants={sectionVariants}
       >
         <div className="absolute inset-0" />
-        <div className="relative z-10 container mx-auto px-6 py-16">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16">
           <div className="text-center">
             <motion.h1
-              className="font-display text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white via-orange-200 to-orange-400 bg-clip-text text-transparent leading-[1.3]"
+              className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-white via-orange-200 to-orange-400 bg-clip-text text-transparent leading-[1.3]"
               variants={heroVariants}
             >
               Phoenix Blog
             </motion.h1>
             <motion.p
-              className="font-body text-lg md:text-xl text-gray-300 max-w-3xl mx-auto"
+              className="font-body text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4"
               variants={heroVariants}
             >
               Stay updated with the latest news, insights, and stories from the
@@ -76,7 +76,7 @@ const Blog = () => {
 
       {/* Blog Grid */}
       <motion.main
-        className="container mx-auto px-6 pb-16"
+        className="container mx-auto px-4 sm:px-6 pb-12 sm:pb-16"
         variants={sectionVariants}
       >
         <BlogGrid />

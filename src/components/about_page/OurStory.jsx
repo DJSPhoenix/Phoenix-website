@@ -3,22 +3,22 @@ import { motion } from "framer-motion";
 
 const OurStory = ({ paragraphs = [] }) => {
   return (
-    <section className="py-16">
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="text-center mb-10">
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">
+    <section className="py-12 sm:py-16">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+        <div className="text-center lg:text-left mb-8 sm:mb-10">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
             Our Story
           </h2>
-          <p className="font-body text-gray-400 max-w-2xl mx-auto">
+          <p className="font-body text-base sm:text-lg text-gray-400 max-w-2xl mx-auto lg:mx-0 px-4 lg:px-0">
             The journey behind our passion and persistence.
           </p>
         </div>
 
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
           {paragraphs.map((text, idx) => (
             <motion.p
               key={idx}
-              className="font-body text-lg text-gray-300 leading-relaxed"
+              className="font-body text-base sm:text-lg text-gray-300 leading-relaxed px-2 sm:px-0 text-center lg:text-left"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}

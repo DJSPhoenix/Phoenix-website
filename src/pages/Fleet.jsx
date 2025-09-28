@@ -63,16 +63,16 @@ const Fleet = () => {
         variants={sectionVariants}
       >
         <div className="absolute inset-0" />
-        <div className="relative z-10 container mx-auto px-6 py-16">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16">
           <div className="text-center">
             <motion.h1
-              className="font-display text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white via-orange-200 to-orange-400 bg-clip-text text-transparent leading-[1.1]"
+              className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-white via-orange-200 to-orange-400 bg-clip-text text-transparent leading-[1.1]"
               variants={heroVariants}
             >
               Our Fleet
             </motion.h1>
             <motion.p
-              className="font-body text-lg md:text-xl text-gray-300 max-w-3xl mx-auto"
+              className="font-body text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4"
               variants={heroVariants}
             >
               Two current drones and five retired builds. Purpose-built for
@@ -84,10 +84,10 @@ const Fleet = () => {
 
       {/* Year Filter Tabs */}
       <motion.section
-        className="container mx-auto px-6"
+        className="container mx-auto px-4 sm:px-6"
         variants={sectionVariants}
       >
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center mb-6 sm:mb-8">
           <div className="flex bg-gray-800/50 rounded-xl p-1 border border-gray-700/50">
             {yearOptions.map((year) => {
               const isActive = selectedYear === year.key;
@@ -95,7 +95,7 @@ const Fleet = () => {
                 <motion.button
                   key={year.key}
                   onClick={() => setSelectedYear(year.key)}
-                  className={`relative px-6 py-3 text-sm font-medium transition-all duration-300 rounded-lg cursor-pointer ${
+                  className={`relative px-4 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-medium transition-all duration-300 rounded-lg cursor-pointer ${
                     isActive ? "text-white" : "text-gray-400 hover:text-white"
                   }`}
                   whileHover={{ scale: 1.02 }}
@@ -117,7 +117,10 @@ const Fleet = () => {
       </motion.section>
 
       {/* Grid */}
-      <main id="fleet-grid" className="container mx-auto px-6 pb-16">
+      <main
+        id="fleet-grid"
+        className="container mx-auto px-4 sm:px-6 pb-12 sm:pb-16"
+      >
         <FleetGrid selectedYear={selectedYear} />
       </main>
     </motion.div>

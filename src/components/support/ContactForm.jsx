@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const FieldControl = ({ field, value, errors, onChange }) => {
   const f = field;
   const baseClasses =
-    "w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500/60 focus:border-orange-500/60";
+    "w-full bg-transparent border border-white/20 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500/60 focus:border-orange-500/60 text-sm sm:text-base";
 
   if (
     f.type === "select" &&
@@ -22,7 +22,7 @@ const FieldControl = ({ field, value, errors, onChange }) => {
           return (
             <motion.label
               key={opt}
-              className={`cursor-pointer ui-text text-sm px-3 py-2 rounded-full border transition-colors ${
+              className={`cursor-pointer ui-text text-xs sm:text-sm px-2 sm:px-3 py-1.5 sm:py-2 rounded-full border transition-colors ${
                 active
                   ? "border-orange-500 bg-orange-500/10 text-white"
                   : "border-white/20 bg-transparent text-gray-200 hover:border-orange-500/60"
@@ -97,7 +97,7 @@ const FieldControl = ({ field, value, errors, onChange }) => {
 const Field = ({ field, value, errors, onChange }) => {
   return (
     <div>
-      <label className="block text-xs uppercase tracking-wide text-gray-400 mb-1">
+      <label className="block text-[10px] sm:text-xs uppercase tracking-wide text-gray-400 mb-1">
         {field.label}
       </label>
       <FieldControl
@@ -107,7 +107,9 @@ const Field = ({ field, value, errors, onChange }) => {
         onChange={(val) => onChange(field.name, val)}
       />
       {errors[field.name] && (
-        <div className="mt-1 text-xs text-red-400">{errors[field.name]}</div>
+        <div className="mt-1 text-[10px] sm:text-xs text-red-400">
+          {errors[field.name]}
+        </div>
       )}
     </div>
   );
@@ -218,21 +220,23 @@ const ContactForm = ({ config, onSubmit }) => {
   return (
     <motion.section
       id="contact"
-      className="container mx-auto px-6 max-w-5xl py-12"
+      className="container mx-auto px-4 sm:px-6 max-w-5xl py-8 sm:py-12"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
       <motion.div className="text-center" variants={itemVariants}>
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-2">
+        <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">
           {config.heading}
         </h2>
-        <p className="text-gray-300 mb-6">{config.subheading}</p>
+        <p className="text-sm sm:text-base text-gray-300 mb-4 sm:mb-6 px-4">
+          {config.subheading}
+        </p>
       </motion.div>
 
       <motion.div
-        className="relative overflow-hidden rounded-2xl border border-white/15 bg-white/5 p-6"
+        className="relative overflow-hidden rounded-2xl border border-white/15 bg-white/5 p-4 sm:p-6"
         variants={formVariants}
       >
         <div className="pointer-events-none absolute left-0 inset-y-0 w-1 rounded-l-2xl bg-gradient-to-b from-orange-500/60 via-orange-400/30 to-transparent" />
@@ -249,7 +253,7 @@ const ContactForm = ({ config, onSubmit }) => {
         />
 
         <form onSubmit={handleSubmit}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
             {config.fields
               .filter((f) =>
                 ["name", "email", "organization", "supportType"].includes(
@@ -267,7 +271,7 @@ const ContactForm = ({ config, onSubmit }) => {
               ))}
           </div>
 
-          <div className="mt-5">
+          <div className="mt-4 sm:mt-5">
             {config.fields
               .filter((f) => f.type === "textarea")
               .map((f) => (
@@ -281,11 +285,11 @@ const ContactForm = ({ config, onSubmit }) => {
               ))}
           </div>
 
-          <div className="mt-6 flex items-center gap-3">
+          <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-3">
             <motion.button
               type="submit"
               disabled={submitting}
-              className="ui-text inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm border transition-all border-orange-500 bg-orange-500/10 text-white hover:bg-orange-500/20 disabled:opacity-60 disabled:cursor-not-allowed"
+              className="ui-text inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm border transition-all border-orange-500 bg-orange-500/10 text-white hover:bg-orange-500/20 disabled:opacity-60 disabled:cursor-not-allowed"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -293,7 +297,7 @@ const ContactForm = ({ config, onSubmit }) => {
             </motion.button>
             {submitted && (
               <motion.span
-                className="text-sm text-green-300"
+                className="text-xs sm:text-sm text-green-300"
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}

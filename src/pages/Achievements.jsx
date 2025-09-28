@@ -57,16 +57,16 @@ const Achievements = () => {
       >
         {/* Removed orange gradient overlay to rely on BeamsBackground */}
         <div className="absolute inset-0"></div>
-        <div className="relative z-10 container mx-auto px-6 py-20">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-20">
           <div className="text-center">
             <motion.h1
-              className="font-display text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-orange-200 to-orange-400 bg-clip-text text-transparent leading-[1.1] pb-1"
+              className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-white via-orange-200 to-orange-400 bg-clip-text text-transparent leading-[1.1] pb-1"
               variants={heroVariants}
             >
               Our Journey of Success
             </motion.h1>
             <motion.p
-              className="font-body text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+              className="font-body text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4"
               variants={heroVariants}
             >
               From our humble beginnings to becoming a force to reckon with in
@@ -81,7 +81,7 @@ const Achievements = () => {
 
       {/* Main Timeline */}
       <motion.main
-        className="container mx-auto px-6"
+        className="container mx-auto px-4 sm:px-6"
         variants={sectionVariants}
       >
         <Timeline />

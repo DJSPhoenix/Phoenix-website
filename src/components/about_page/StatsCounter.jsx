@@ -50,36 +50,36 @@ const StatsCounter = ({ items = [], durationMs = 1200 }) => {
   }, [isInView, durationMs, items]);
 
   return (
-    <section className="py-16" ref={ref}>
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-8">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-3">
+    <section className="py-12 sm:py-16" ref={ref}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="text-center lg:text-left mb-6 sm:mb-8">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3">
             Our Impact in Numbers
           </h2>
-          <p className="font-body text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="font-body text-base sm:text-lg text-gray-400 max-w-2xl mx-auto lg:mx-0 px-4 lg:px-0">
             These numbers represent our commitment to excellence and growth.
           </p>
         </div>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
           {items.map((item, idx) => {
             const Icon = iconMap[item.iconKey] || FaUsers;
             return (
               <motion.div
                 key={item.label}
-                className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 text-center transform-gpu will-change-transform transition-transform duration-100 ease-out hover:scale-[1.03] hover:shadow-md hover:shadow-white/5 hover:border-orange-500"
+                className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 sm:p-6 text-center transform-gpu will-change-transform transition-transform duration-100 ease-out hover:scale-[1.03] hover:shadow-md hover:shadow-white/5 hover:border-orange-500"
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.35, delay: idx * 0.05 }}
               >
-                <div className="w-14 h-14 bg-[#ff8c00] rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <Icon className="w-6 h-6 text-white" />
+                <div className="w-12 sm:w-14 h-12 sm:h-14 bg-[#ff8c00] rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                  <Icon className="w-5 sm:w-6 h-5 sm:h-6 text-white" />
                 </div>
-                <div className="font-ui font-bold text-4xl text-white mb-2">
+                <div className="font-ui font-bold text-3xl sm:text-4xl text-white mb-2">
                   {Math.round(values[item.label])}
                   {item.suffix || ""}
                 </div>
-                <div className="font-body text-gray-400 font-medium">
+                <div className="font-body text-sm sm:text-base text-gray-400 font-medium">
                   {item.label}
                 </div>
               </motion.div>

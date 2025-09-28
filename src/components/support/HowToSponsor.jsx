@@ -63,51 +63,59 @@ const HowToSponsor = () => {
 
   return (
     <motion.section
-      className="container mx-auto px-6 max-w-5xl py-12"
+      className="container mx-auto px-4 sm:px-6 max-w-5xl py-8 sm:py-12"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
       <motion.h2
-        className="font-display text-3xl md:text-4xl font-bold text-white mb-6 text-center"
+        className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6 text-center"
         variants={itemVariants}
       >
         How to Sponsor
       </motion.h2>
 
-      <div className="lg:hidden space-y-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="lg:hidden space-y-4 sm:space-y-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
           {steps.slice(0, 3).map((s, idx) => (
             <motion.div
               key={s.title}
-              className="rounded-2xl border border-white/15 bg-white/5 p-6 transition-transform duration-300 hover:-translate-y-1 hover:border-orange-500/40 hover:bg-white/10 hover:shadow-[0_0_18px_rgba(255,140,0,0.18)]"
+              className="rounded-2xl border border-white/15 bg-white/5 p-4 sm:p-6 transition-transform duration-300 hover:-translate-y-1 hover:border-orange-500/40 hover:bg-white/10 hover:shadow-[0_0_18px_rgba(255,140,0,0.18)]"
               variants={stepVariants}
               whileHover={{ y: -8, scale: 1.02 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
             >
-              <div className="ui-text text-xs text-gray-300 mb-2">
+              <div className="ui-text text-[10px] sm:text-xs text-gray-300 mb-1 sm:mb-2">
                 Step {idx + 1}
               </div>
-              <p className="text-white font-semibold text-lg">{s.title}</p>
-              <p className="text-gray-300 text-sm mt-1">{s.detail}</p>
+              <p className="text-white font-semibold text-base sm:text-lg">
+                {s.title}
+              </p>
+              <p className="text-gray-300 text-xs sm:text-sm mt-1">
+                {s.detail}
+              </p>
             </motion.div>
           ))}
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-stretch">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 justify-items-stretch">
           {steps.slice(3).map((s, idx) => (
             <motion.div
               key={s.title}
-              className="rounded-2xl border border-white/15 bg-white/5 p-6 transition-transform duration-300 hover:-translate-y-1 hover:border-orange-500/40 hover:bg-white/10 hover:shadow-[0_0_18px_rgba(255,140,0,0.18)]"
+              className="rounded-2xl border border-white/15 bg-white/5 p-4 sm:p-6 transition-transform duration-300 hover:-translate-y-1 hover:border-orange-500/40 hover:bg-white/10 hover:shadow-[0_0_18px_rgba(255,140,0,0.18)]"
               variants={stepVariants}
               whileHover={{ y: -8, scale: 1.02 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
             >
-              <div className="ui-text text-xs text-gray-300 mb-2">
+              <div className="ui-text text-[10px] sm:text-xs text-gray-300 mb-1 sm:mb-2">
                 Step {idx + 4}
               </div>
-              <p className="text-white font-semibold text-lg">{s.title}</p>
-              <p className="text-gray-300 text-sm mt-1">{s.detail}</p>
+              <p className="text-white font-semibold text-base sm:text-lg">
+                {s.title}
+              </p>
+              <p className="text-gray-300 text-xs sm:text-sm mt-1">
+                {s.detail}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -121,22 +129,24 @@ const HowToSponsor = () => {
           {steps.map((s, idx) => (
             <React.Fragment key={s.title}>
               <motion.div
-                className="flex flex-col items-center text-center min-w-[180px]"
+                className="flex flex-col items-center text-center min-w-[160px] lg:min-w-[180px]"
                 variants={stepVariants}
                 whileHover={{ y: -8, scale: 1.05 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
               >
-                <div className="ui-text w-20 h-20 text-4xl rounded-full border border-orange-500/60 bg-orange-500/10 text-white flex items-center justify-center mb-2">
+                <div className="ui-text w-16 h-16 lg:w-20 lg:h-20 text-2xl lg:text-4xl rounded-full border border-orange-500/60 bg-orange-500/10 text-white flex items-center justify-center mb-2">
                   {idx + 1}
                 </div>
-                <div className="text-white font-semibold">{s.title}</div>
-                <div className="text-gray-300 text-sm max-w-[240px]">
+                <div className="text-white font-semibold text-sm lg:text-base">
+                  {s.title}
+                </div>
+                <div className="text-gray-300 text-xs lg:text-sm max-w-[200px] lg:max-w-[240px]">
                   {s.detail}
                 </div>
               </motion.div>
               {idx < steps.length - 1 && (
                 <motion.div
-                  className="h-px mx-6 w-24 xl:w-32 bg-gradient-to-r from-white/10 via-white/40 to-white/10"
+                  className="h-px mx-3 lg:mx-6 w-16 lg:w-24 xl:w-32 bg-gradient-to-r from-white/10 via-white/40 to-white/10"
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}

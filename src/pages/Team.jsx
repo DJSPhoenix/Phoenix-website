@@ -11,25 +11,25 @@ const Team = () => {
       <Navbar currentPage="Team" />
 
       {/* Hero Section */}
-      <section className="relative py-24 overflow-hidden">
+      <section className="relative py-12 sm:py-20 md:py-24 overflow-hidden">
         <div className="absolute inset-0"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-40">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 sm:mb-16">
             <motion.div
-              className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/30 rounded-full mb-8"
+              className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-white/10 border border-white/30 rounded-full mb-6 sm:mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <HiSparkles className="w-4 h-4 text-white" />
-              <span className="font-ui text-sm text-white font-bold">
+              <HiSparkles className="w-3 sm:w-4 h-3 sm:h-4 text-white" />
+              <span className="font-ui text-xs sm:text-sm text-white font-bold">
                 Championship Team
               </span>
             </motion.div>
 
             <motion.h1
-              className="font-display text-5xl md:text-7xl font-bold text-white mb-8"
+              className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 sm:mb-8"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -41,7 +41,7 @@ const Team = () => {
             </motion.h1>
 
             <motion.p
-              className="font-body text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed"
+              className="font-body text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -56,7 +56,7 @@ const Team = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="mt-16"
+              className="mt-12 sm:mt-16"
             >
               <ExpandableCardDemo />
             </motion.div>

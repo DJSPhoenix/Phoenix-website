@@ -51,7 +51,7 @@ const TimelineCard = ({ item, index }) => {
       onMouseMove={onMove}
       onMouseLeave={onLeave}
       whileHover={{ y: -4 }}
-      className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-orange-500/60 transition-all hover:shadow-2xl hover:shadow-orange-500/30 min-h-56 md:min-h-64 p-4 w-full"
+      className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-orange-500/60 transition-all hover:shadow-2xl hover:shadow-orange-500/30 min-h-48 sm:min-h-56 md:min-h-64 p-3 sm:p-4 w-full"
     >
       {/* Subtle top highlight for depth */}
       <div className="pointer-events-none absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-white/5 to-transparent" />
@@ -71,20 +71,20 @@ const TimelineCard = ({ item, index }) => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 p-6 md:p-7">
-        <div className="flex items-center gap-4 md:gap-5 mb-4">
+      <div className="relative z-10 p-4 sm:p-6 md:p-7">
+        <div className="flex items-center gap-3 sm:gap-4 md:gap-5 mb-3 sm:mb-4">
           <div>
-            <div className="font-display text-xl md:text-2xl font-bold text-white leading-snug">
+            <div className="font-display text-lg sm:text-xl md:text-2xl font-bold text-white leading-snug">
               {item.title}
             </div>
-            <div className="ui-text text-xs md:text-sm text-neutral-400 mt-0.5">
+            <div className="ui-text text-xs sm:text-xs md:text-sm text-neutral-400 mt-0.5">
               {item.date}
             </div>
           </div>
         </div>
         <div className="mb-3 flex items-center gap-2 ui-text">
           <span
-            className="ui-text inline-block text-[10px] md:text-xs tracking-wide px-2.5 py-0.5 rounded-full text-white"
+            className="ui-text inline-block text-[9px] sm:text-[10px] md:text-xs tracking-wide px-2 sm:px-2.5 py-0.5 rounded-full text-white"
             style={{
               background: `linear-gradient(90deg, hsla(${hue},90%,50%,0.9), hsla(${
                 (hue + 30) % 360
@@ -94,12 +94,12 @@ const TimelineCard = ({ item, index }) => {
             {item.category}
           </span>
           {item.status && (
-            <span className="ui-text inline-block text-[10px] md:text-xs tracking-wide px-2.5 py-0.5 rounded-full border border-neutral-700 text-neutral-300">
+            <span className="ui-text inline-block text-[9px] sm:text-[10px] md:text-xs tracking-wide px-2 sm:px-2.5 py-0.5 rounded-full border border-neutral-700 text-neutral-300">
               {item.status}
             </span>
           )}
         </div>
-        <p className="font-body text-[15px] md:text-base text-neutral-200 leading-7">
+        <p className="font-body text-sm sm:text-[15px] md:text-base text-neutral-200 leading-6 sm:leading-7">
           {item.description}
         </p>
 
@@ -110,13 +110,13 @@ const TimelineCard = ({ item, index }) => {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.25, ease: "easeOut" }}
-              className="mt-3 pt-3 border-t border-neutral-700"
+              className="mt-2 sm:mt-3 pt-2 sm:pt-3 border-t border-neutral-700"
             >
-              <div className="ui-text text-xs text-neutral-300 flex flex-wrap gap-4">
+              <div className="ui-text text-xs text-neutral-300 flex flex-wrap gap-2 sm:gap-4">
                 {item.category && (
-                  <span className="inline-flex items-center gap-2">
+                  <span className="inline-flex items-center gap-1 sm:gap-2">
                     <span
-                      className="w-2 h-2 rounded-full"
+                      className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full"
                       style={{ backgroundColor: `hsl(${hue},90%,55%)` }}
                     />
                     Category:{" "}
@@ -124,9 +124,9 @@ const TimelineCard = ({ item, index }) => {
                   </span>
                 )}
                 {item.status && (
-                  <span className="inline-flex items-center gap-2">
+                  <span className="inline-flex items-center gap-1 sm:gap-2">
                     <span
-                      className="w-2 h-2 rounded-full"
+                      className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full"
                       style={{
                         backgroundColor: `hsl(${(hue + 25) % 360},90%,55%)`,
                       }}

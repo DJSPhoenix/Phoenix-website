@@ -45,54 +45,59 @@ const LocationMap = () => {
   };
 
   return (
-    <section className="py-20 bg-black relative overflow-hidden">
+    <section className="py-12 sm:py-20 bg-black relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/50 to-black"></div>
 
       <motion.div
-        className="relative z-10 max-w-7xl mx-auto px-6"
+        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
         {/* Header */}
-        <motion.div className="text-center mb-16" variants={itemVariants}>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-6">
+        <motion.div
+          className="text-center lg:text-left mb-12 sm:mb-16"
+          variants={itemVariants}
+        >
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
             Where to Find Us
           </h2>
-          <p className="font-body text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="font-body text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto lg:mx-0 px-4 lg:px-0">
             Our workspace at DJ Sanghvi College of Engineering, Mumbai.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-stretch">
           {/* Address & Contact Info */}
           <motion.div variants={itemVariants}>
-            <div className="bg-white/5 backdrop-blur-md border border-white/15 rounded-2xl p-8 h-full flex flex-col">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center">
-                  <HiLocationMarker className="w-6 h-6 text-orange-400" />
+            <div className="bg-white/5 backdrop-blur-md border border-white/15 rounded-2xl p-6 sm:p-8 h-full flex flex-col">
+              <div className="flex items-center gap-3 mb-4 sm:mb-6">
+                <div className="w-10 sm:w-12 h-10 sm:h-12 bg-orange-500/20 rounded-xl flex items-center justify-center">
+                  <HiLocationMarker className="w-5 sm:w-6 h-5 sm:h-6 text-orange-400" />
                 </div>
-                <h3 className="font-display text-2xl font-bold text-white">
+                <h3 className="font-display text-xl sm:text-2xl font-bold text-white">
                   DJ Sanghvi College of Engineering
                 </h3>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 <div>
-                  <h4 className="font-ui font-bold text-white mb-2">Address</h4>
-                  <p className="font-body text-gray-300 leading-relaxed">
+                  <h4 className="font-ui font-bold text-white mb-2 text-sm sm:text-base">
+                    Address
+                  </h4>
+                  <p className="font-body text-sm sm:text-base text-gray-300 leading-relaxed">
                     {address}
                   </p>
                 </div>
 
                 <div>
-                  <h4 className="font-ui font-bold text-white mb-2">
+                  <h4 className="font-ui font-bold text-white mb-2 text-sm sm:text-base">
                     Contact Information
                   </h4>
                   <div className="flex items-center gap-3">
-                    <HiMail className="w-5 h-5 text-orange-400" />
-                    <span className="font-body text-gray-300">
+                    <HiMail className="w-4 sm:w-5 h-4 sm:h-5 text-orange-400" />
+                    <span className="font-body text-sm sm:text-base text-gray-300">
                       djsphoenixteam@gmail.com
                     </span>
                   </div>
@@ -104,7 +109,7 @@ const LocationMap = () => {
           {/* Map */}
           <motion.div variants={itemVariants}>
             <div className="bg-white/5 backdrop-blur-md border border-white/15 rounded-2xl overflow-hidden h-full flex flex-col">
-              <div className="flex-1 w-full relative">
+              <div className="flex-1 w-full relative min-h-[300px] sm:min-h-[400px]">
                 <MapContainer
                   center={position}
                   zoom={16}
@@ -128,10 +133,10 @@ const LocationMap = () => {
               </div>
 
               {/* Map overlay info */}
-              <div className="p-4 bg-black/80 backdrop-blur-sm">
-                <div className="flex items-center justify-between">
+              <div className="p-3 sm:p-4 bg-black/80 backdrop-blur-sm">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0">
                   <div>
-                    <h4 className="font-ui font-bold text-white text-sm">
+                    <h4 className="font-ui font-bold text-white text-xs sm:text-sm">
                       Coordinates
                     </h4>
                     <p className="font-body text-gray-300 text-xs">
@@ -145,7 +150,7 @@ const LocationMap = () => {
                         "_blank"
                       )
                     }
-                    className="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white font-ui font-bold text-sm rounded-lg transition-colors duration-200"
+                    className="px-3 sm:px-4 py-1.5 sm:py-2 bg-orange-500 hover:bg-orange-600 text-white font-ui font-bold text-xs sm:text-sm rounded-lg transition-colors duration-200"
                   >
                     Open in Maps
                   </button>

@@ -79,7 +79,7 @@ const Support = () => {
       </motion.div>
       <motion.div
         variants={pageVariants}
-        className="container mx-auto px-6 max-w-5xl py-12"
+        className="container mx-auto px-4 sm:px-6 max-w-5xl py-8 sm:py-12"
       >
         <WaysToSupport items={waysToSupport} />
       </motion.div>

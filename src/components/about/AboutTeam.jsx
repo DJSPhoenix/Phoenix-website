@@ -72,25 +72,28 @@ const AboutTeam = () => {
     <section className="min-h-screen bg-black relative overflow-hidden py-8">
       <div className="absolute inset-0 bg-black" />
       <motion.div
-        className="relative z-10 max-w-7xl mx-auto px-6"
+        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
         {/* Header Section */}
-        <motion.div className="text-center mb-16" variants={itemVariants}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#ff8c00]/10 border border-[#ff8c00]/30 rounded-full mb-6">
-            <HiSparkles className="w-4 h-4 text-[#ff8c00]" />
-            <span className="font-ui text-sm text-[#ff8c00] font-bold">
+        <motion.div
+          className="text-center mb-12 sm:mb-16"
+          variants={itemVariants}
+        >
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-[#ff8c00]/10 border border-[#ff8c00]/30 rounded-full mb-4 sm:mb-6">
+            <HiSparkles className="w-3 sm:w-4 h-3 sm:h-4 text-[#ff8c00]" />
+            <span className="font-ui text-xs sm:text-sm text-[#ff8c00] font-bold">
               About Our Team
             </span>
           </div>
-          <h1 className="font-display text-4xl lg:text-5xl font-bold text-white mb-6">
+          <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
             Meet
             <span className="block text-[#ff8c00]">DJS Phoenix</span>
           </h1>
-          <p className="font-body text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-body text-base sm:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed px-4">
             A passionate team of students pushing the boundaries of aerial
             robotics and autonomous systems.
           </p>
@@ -99,11 +102,11 @@ const AboutTeam = () => {
         {/* CTA Button (above grid) */}
         <motion.div
           variants={itemVariants}
-          className="mb-12 flex justify-center"
+          className="mb-8 sm:mb-12 flex justify-center"
         >
           <Link to="/team">
             <motion.button
-              className="group relative px-8 py-4 bg-gradient-to-r from-[#ff8c00] to-orange-600 text-white font-ui font-bold text-lg rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-[#ff8c00]/25 cursor-pointer"
+              className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#ff8c00] to-orange-600 text-white font-ui font-bold text-base sm:text-lg rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-[#ff8c00]/25 cursor-pointer"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -114,19 +117,19 @@ const AboutTeam = () => {
         </motion.div>
 
         {/* Main Content Grid: Mission | Image (row-span-2) / Vision */}
-        <div className="grid gap-12 lg:grid-cols-2 items-start mb-16">
+        <div className="grid gap-8 sm:gap-12 lg:grid-cols-2 items-start mb-12 sm:mb-16">
           {/* Mission (row 1, col 1) */}
           <motion.div variants={textVariants}>
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 hover:bg-white/15 hover:border-white/40 hover:shadow-lg hover:shadow-white/10 transition-colors duration-200">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-[#ff8c00]/20 rounded-xl flex items-center justify-center">
-                  <FaRocket className="w-6 h-6 text-[#ff8c00]" />
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 sm:p-6 hover:bg-white/15 hover:border-white/40 hover:shadow-lg hover:shadow-white/10 transition-colors duration-200">
+              <div className="flex items-center gap-3 mb-4 sm:mb-6">
+                <div className="w-10 sm:w-12 h-10 sm:h-12 bg-[#ff8c00]/20 rounded-xl flex items-center justify-center">
+                  <FaRocket className="w-5 sm:w-6 h-5 sm:h-6 text-[#ff8c00]" />
                 </div>
-                <h2 className="font-display text-2xl font-bold text-white">
+                <h2 className="font-display text-xl sm:text-2xl font-bold text-white">
                   Our Mission
                 </h2>
               </div>
-              <p className="font-body text-lg text-gray-300 leading-relaxed">
+              <p className="font-body text-base sm:text-lg text-gray-300 leading-relaxed">
                 We are a student-led drone team from DJ Sanghvi College of
                 Engineering, Mumbai. We design, build and race UAVs — applying
                 flight control, perception and systems engineering to real-world
@@ -137,29 +140,29 @@ const AboutTeam = () => {
 
           {/* Image (col 2, spans both rows on lg+) */}
           <motion.div
-            className="relative self-stretch h-full flex items-center justify-center lg:row-span-2"
+            className="relative self-stretch h-full flex items-center justify-center lg:row-span-2 order-first lg:order-none"
             variants={photoVariants}
           >
-            <div className="relative overflow-hidden rounded-xl shadow-xl mx-auto">
+            <div className="relative overflow-hidden rounded-xl shadow-xl mx-auto w-full">
               <img
                 src={teamPhoto}
                 alt="DJS Phoenix Team"
-                className="h-110 w-full object-cover object-center"
+                className="h-64 sm:h-80 lg:h-110 w-full object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
             </div>
             <motion.div
-              className="absolute -bottom-4 -right-4 bg-gray-800 rounded-xl p-4 shadow-lg border border-gray-700"
+              className="absolute -bottom-2 sm:-bottom-4 -right-2 sm:-right-4 bg-gray-800 rounded-xl p-3 sm:p-4 shadow-lg border border-gray-700"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
               <div className="flex items-center gap-2 mb-1">
-                <FaTrophy className="w-4 h-4 text-[#ff8c00]" />
-                <h4 className="font-ui font-bold text-white text-sm">
+                <FaTrophy className="w-3 sm:w-4 h-3 sm:h-4 text-[#ff8c00]" />
+                <h4 className="font-ui font-bold text-white text-xs sm:text-sm">
                   Latest Achievement
                 </h4>
               </div>
-              <p className="font-ui font-bold text-[#ff8c00] text-sm">
+              <p className="font-ui font-bold text-[#ff8c00] text-xs sm:text-sm">
                 ISRO IROC 2025 Finalists
               </p>
             </motion.div>
@@ -167,16 +170,16 @@ const AboutTeam = () => {
 
           {/* Vision (row 2, col 1) */}
           <motion.div variants={textVariants}>
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 hover:bg-white/15 hover:border-white/40 hover:shadow-lg hover:shadow-white/10 transition-colors duration-200">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-[#ff8c00]/20 rounded-xl flex items-center justify-center">
-                  <FaAward className="w-6 h-6 text-[#ff8c00]" />
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 sm:p-6 hover:bg-white/15 hover:border-white/40 hover:shadow-lg hover:shadow-white/10 transition-colors duration-200">
+              <div className="flex items-center gap-3 mb-4 sm:mb-6">
+                <div className="w-10 sm:w-12 h-10 sm:h-12 bg-[#ff8c00]/20 rounded-xl flex items-center justify-center">
+                  <FaAward className="w-5 sm:w-6 h-5 sm:h-6 text-[#ff8c00]" />
                 </div>
-                <h2 className="font-display text-2xl font-bold text-white">
+                <h2 className="font-display text-xl sm:text-2xl font-bold text-white">
                   Our Vision
                 </h2>
               </div>
-              <p className="font-body text-lg text-gray-300 leading-relaxed">
+              <p className="font-body text-base sm:text-lg text-gray-300 leading-relaxed">
                 Our vision is to achieve success nationally and internationally,
                 putting our college on the world map. We pursue this by
                 mentoring new recruits, and competing openly—raising the bar for
