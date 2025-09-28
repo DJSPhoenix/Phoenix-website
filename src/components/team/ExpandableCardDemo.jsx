@@ -11,9 +11,13 @@ export function ExpandableCardDemo() {
     <motion.div
       key={card.title}
       className="group relative bg-black border border-gray-800 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 hover:border-orange-500 hover:shadow-2xl hover:shadow-orange-500/30 hover:-translate-y-2 sm:hover:-translate-y-3 hover:scale-[1.02] sm:hover:scale-[1.05] transition-all duration-300 overflow-hidden"
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: index * 0.05 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{
+        duration: 0.7,
+        ease: [0.25, 0.25, 0, 1],
+        delay: 0.2 + index * 0.05,
+      }}
     >
       {/* Background Gradient Effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-orange-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

@@ -35,7 +35,7 @@ const PostsGrid = () => {
         initial="hidden"
         animate="visible"
       >
-        {postsData.map((post, index) => (
+        {[...postsData].reverse().map((post, index) => (
           <motion.div key={index} variants={itemVariants}>
             <PostsCard
               title={post.title}

@@ -53,12 +53,24 @@ const StatsCounter = ({ items = [], durationMs = 1200 }) => {
     <section className="py-12 sm:py-16" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-6 sm:mb-8">
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3">
+          <motion.h2
+            className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5 }}
+          >
             Our Impact in Numbers
-          </h2>
-          <p className="font-body text-base sm:text-lg text-gray-400 max-w-2xl mx-auto px-4">
+          </motion.h2>
+          <motion.p
+            className="font-body text-base sm:text-lg text-gray-400 max-w-2xl mx-auto px-4"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.05 }}
+          >
             These numbers represent our commitment to excellence and growth.
-          </p>
+          </motion.p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
           {items.map((item, idx) => {

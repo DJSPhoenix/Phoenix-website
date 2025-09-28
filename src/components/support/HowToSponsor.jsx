@@ -31,8 +31,8 @@ const HowToSponsor = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2,
+        staggerChildren: 0.05,
+        delayChildren: 0,
       },
     },
   };
@@ -150,7 +150,7 @@ const HowToSponsor = () => {
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: 0.3 + idx * 0.1 }}
+                  transition={{ duration: 0.5, delay: 0.1 + idx * 0.05 }}
                 />
               )}
             </React.Fragment>
