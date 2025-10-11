@@ -126,7 +126,7 @@ function ScrollExpandMedia({
   }, []);
 
   const mediaWidth = 300 + scrollProgress * (isMobileState ? 650 : 1250);
-  const mediaHeight = 400 + scrollProgress * (isMobileState ? 200 : 400);
+  const mediaHeight = 400 + scrollProgress * (isMobileState ? 300 : 600);
   const textTranslateX = scrollProgress * (isMobileState ? 180 : 150);
 
   const firstWord = title ? title.split(" ")[0] : "";
@@ -138,7 +138,7 @@ function ScrollExpandMedia({
       className="transition-colors duration-700 ease-in-out overflow-x-hidden"
     >
       <section className="relative flex flex-col items-center justify-start min-h-[100dvh]">
-        <div className="relative w-full flex flex-col items-center min-h-[100dvh]">
+        <div className="relative w-full flex flex-col items-center min-h-[100dvh] -mt-12 sm:-mt-16">
           <motion.div
             className="absolute inset-0 z-0 h-full"
             initial={{ opacity: 0 }}
@@ -159,13 +159,14 @@ function ScrollExpandMedia({
           <div className="container mx-auto flex flex-col items-center justify-start relative z-10">
             <div className="flex flex-col items-center justify-center w-full h-[100dvh] relative">
               <div
-                className="absolute z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-none rounded-2xl"
+                className="absolute z-0 top-1/2 left-1/2 transition-none rounded-2xl overflow-hidden"
                 style={{
                   width: `${mediaWidth}px`,
                   height: `${mediaHeight}px`,
                   maxWidth: "95vw",
-                  maxHeight: "85vh",
+                  maxHeight: "100vh",
                   boxShadow: "0px 0px 50px rgba(0, 0, 0, 0.3)",
+                  transform: "translate(-50%, calc(-50% + 63px))",
                 }}
               >
                 {mediaType === "video" ? (

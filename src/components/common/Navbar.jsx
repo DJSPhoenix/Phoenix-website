@@ -31,7 +31,7 @@ const Navbar = ({ currentPage = "Home" }) => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.25, 0.25, 0, 1] }}
     >
-      <div className="container mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+      <div className="container mx-auto px-4 sm:px-6 h-12 sm:h-16 flex items-center justify-between">
         {/* Left: Logo + Brand + Current Page */}
         <motion.div
           className="flex items-center space-x-2 sm:space-x-4"
