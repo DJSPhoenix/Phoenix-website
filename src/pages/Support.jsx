@@ -21,7 +21,7 @@ import {
 import ANSYSLogo from "../assets/Sponsors/ANSYS_logo.png";
 import SolidWorksLogo from "../assets/Sponsors/SolidWorks_Logo.png";
 import NinetronLogo from "../assets/Sponsors/Ninetron_logo.png";
-import CUAVLogo from "../assets/Sponsors/cuav_logo.png";
+import CUAVLogo from "../assets/Sponsors/CUAV_logo.png";
 import ATCLogo from "../assets/Sponsors/atclogo.png";
 
 const Support = () => {
