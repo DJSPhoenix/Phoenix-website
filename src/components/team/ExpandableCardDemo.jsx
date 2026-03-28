@@ -4,9 +4,6 @@ import { FaLinkedin } from "react-icons/fa";
 import { coreTeamCards } from "./teamData";
 
 export function ExpandableCardDemo() {
-  // Combine both core and junior core into one unified team
-  const allTeamCards = [...coreTeamCards];
-
   const TeamCard = ({ card, index }) => (
     <motion.div
       key={card.Name}
@@ -69,7 +66,7 @@ export function ExpandableCardDemo() {
     <div className="max-w-7xl mx-auto w-full px-4 sm:px-6">
       {/* Unified Team Grid - No Filters */}
       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
-        {allTeamCards.map((card, index) => (
+        {coreTeamCards.map((card, index) => (
           <TeamCard key={card.Name} card={card} index={index} />
         ))}
       </div>
