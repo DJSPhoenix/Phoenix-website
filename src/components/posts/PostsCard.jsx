@@ -1,15 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaLinkedin } from "react-icons/fa";
 import Logo from "../../assets/Logo.png";
 
 const PostsCard = ({ title, excerpt, image, linkedinUrl }) => {
-  const handleShare = () => {
-    if (linkedinUrl) {
-      window.open(linkedinUrl, "_blank");
-    }
-  };
-
   return (
     <motion.div
       className="bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-xl overflow-hidden hover:border-orange-500/50 transition-all duration-300 group"
@@ -30,16 +23,28 @@ const PostsCard = ({ title, excerpt, image, linkedinUrl }) => {
 
       {/* Content */}
       <div className="p-4 sm:p-6">
-        <h3 className="font-display text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 line-clamp-2 group-hover:text-orange-400 transition-colors">
-          {title}
-        </h3>
+        {linkedinUrl ?
+          <a
+            href={linkedinUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block"
+          >
+            <h3 className="font-display text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 line-clamp-2 group-hover:text-orange-400 transition-colors cursor-pointer">
+              {title}
+            </h3>
+          </a>
+        : <h3 className="font-display text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 line-clamp-2">
+            {title}
+          </h3>
+        }
 
         <p className="font-body text-xs sm:text-sm text-gray-300 mb-3 sm:mb-4 line-clamp-3 h-12 sm:h-16">
           {excerpt}
         </p>
 
-        {/* Author and Share */}
-        <div className="flex items-center justify-between text-xs sm:text-sm text-gray-400">
+        {/* Author */}
+        <div className="flex items-center text-xs sm:text-sm text-gray-400">
           <div className="flex items-center">
             <div className="w-8 sm:w-10 h-8 sm:h-10 bg-white border border-orange-500/30 rounded-full mr-2 sm:mr-3 flex items-center justify-center p-1">
               <img
@@ -50,19 +55,6 @@ const PostsCard = ({ title, excerpt, image, linkedinUrl }) => {
             </div>
             <span className="font-body text-sm sm:text-lg">DJS Phoenix</span>
           </div>
-
-          {/* Share Icon */}
-          {linkedinUrl && (
-            <motion.button
-              onClick={handleShare}
-              className="p-1.5 sm:p-2 rounded-full border border-orange-500/30 duration-200 cursor-pointer"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              title="Share on LinkedIn"
-            >
-              <FaLinkedin className="w-4 sm:w-5 h-4 sm:h-5 text-gray-400 hover:text-orange-400 transition-colors" />
-            </motion.button>
-          )}
         </div>
       </div>
     </motion.div>

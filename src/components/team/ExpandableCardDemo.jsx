@@ -1,15 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaLinkedin } from "react-icons/fa";
-import { coreTeamCards, juniorCoreCards } from "./teamData";
+import { coreTeamCards } from "./teamData";
 
 export function ExpandableCardDemo() {
   // Combine both core and junior core into one unified team
-  const allTeamCards = [...coreTeamCards, ...juniorCoreCards];
+  const allTeamCards = [...coreTeamCards];
 
   const TeamCard = ({ card, index }) => (
     <motion.div
-      key={card.title}
+      key={card.Name}
       className="group relative bg-black border border-gray-800 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 hover:border-orange-500 hover:shadow-2xl hover:shadow-orange-500/30 hover:-translate-y-2 sm:hover:-translate-y-3 hover:scale-[1.02] sm:hover:scale-[1.05] transition-all duration-300 overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -27,7 +27,7 @@ export function ExpandableCardDemo() {
         <div className="relative overflow-hidden rounded-full w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48">
           <img
             src={card.src}
-            alt={card.title}
+            alt={card.Name}
             className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-110"
           />
         </div>
@@ -39,10 +39,10 @@ export function ExpandableCardDemo() {
           {/* Left side - Name and Position */}
           <div className="flex-1 text-left space-y-1 sm:space-y-2">
             <h3 className="font-ui font-bold text-white text-sm sm:text-base md:text-lg">
-              {card.title}
+              {card.Name}
             </h3>
             <p className="font-body text-orange-400 text-xs sm:text-sm font-medium">
-              {card.description}
+              {card.Title}
             </p>
           </div>
 
@@ -68,9 +68,9 @@ export function ExpandableCardDemo() {
   return (
     <div className="max-w-7xl mx-auto w-full px-4 sm:px-6">
       {/* Unified Team Grid - No Filters */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
         {allTeamCards.map((card, index) => (
-          <TeamCard key={card.title} card={card} index={index} />
+          <TeamCard key={card.Name} card={card} index={index} />
         ))}
       </div>
     </div>

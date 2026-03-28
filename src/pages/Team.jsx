@@ -19,18 +19,6 @@ const Team = () => {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-40">
           <div className="text-center mb-12 sm:mb-16">
-            <motion.div
-              className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-white/10 border border-white/30 rounded-full mb-6 sm:mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <HiSparkles className="w-3 sm:w-4 h-3 sm:h-4 text-white" />
-              <span className="font-ui text-xs sm:text-sm text-white font-bold">
-                Championship Team
-              </span>
-            </motion.div>
-
             <motion.h1
               className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 sm:mb-8"
               initial={{ opacity: 0, y: 30 }}
@@ -38,7 +26,7 @@ const Team = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               The Minds Behind
-              <span className="block bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
                 DJS Phoenix
               </span>
             </motion.h1>
@@ -68,7 +56,7 @@ const Team = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <span className="flex-1 text-center font-display text-2xl sm:text-3xl font-bold text-white">
-                  2024 - 2025
+                  2025 - 2026
                 </span>
                 <motion.span
                   className="ml-4 block"

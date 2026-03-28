@@ -1,69 +1,18 @@
-import React from "react";
-import {
-  FaTrophy,
-  FaCalendarAlt,
-  FaRocket,
-  FaCheckCircle,
-  FaClock,
-} from "react-icons/fa";
 import { GiLaurelCrown } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import competitions from "./competitionData";
 
 // Get accent color based on status
 function getAccentColor(status) {
-  return status === "completed"
-    ? { hue: 120, saturation: 90 }
+  return status === "completed" ?
+      { hue: 120, saturation: 90 }
     : { hue: 200, saturation: 90 }; // green for completed, blue for upcoming
 }
 
 const CompetitionsSection = () => {
-  const competitions = [
-    {
-      id: 1,
-      name: "NIDAR",
-      status: "upcoming",
-      date: "November 2025",
-      description:
-        "Hosted by the Ministry of Electronics and Information Technology (MeitY) and Drone Federation India (DFI) under the SwaYaan initiative.",
-      category: "Disaster Management",
-      icon: FaRocket,
-    },
-    {
-      id: 2,
-      name: "SAE Aerothon",
-      status: "upcoming",
-      date: "November 2025",
-      description:
-        "SAEINDIA's flagship event supporting the Indian government's mission to make India a UAS/Drone hub by 2030 under the AatmaNirbhar Bharat Abhiyan",
-      category: "Surveillance and Disaster Management",
-      icon: FaRocket,
-    },
-    {
-      id: 3,
-      name: "ISRO IROC 2025",
-      status: "completed",
-      date: "August 2025",
-      description:
-        "Indian Space Research Organisation's Innovation Challenge for safe spot detection on the Martian surface",
-      category: "Space Technology",
-      icon: FaTrophy,
-      achievement: "Finalist",
-    },
-    {
-      id: 4,
-      name: "Drone Dexterity 2025",
-      status: "completed",
-      date: "March 2025",
-      description: "Obstacle avoidance and racing competition",
-      category: "Racing",
-      icon: FaTrophy,
-      achievement: "2nd Place",
-    },
-  ];
-
   const completedCount = competitions.filter(
-    (c) => c.status === "completed"
+    (c) => c.status === "completed",
   ).length;
   const totalCount = competitions.length;
   const progressPercentage = (completedCount / totalCount) * 100;
@@ -152,7 +101,7 @@ const CompetitionsSection = () => {
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             Plans for
             <span className="block text-2xl sm:text-3xl md:text-3xl text-[#ff8c00] font-bold mt-2">
-              2024-2025
+              2025-2026
             </span>
           </h2>
           <p className="font-body text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4">

@@ -4,13 +4,15 @@ import blog3 from "../../assets/blogs/blog-3.jpeg";
 import blog4 from "../../assets/blogs/blog-4.jpeg";
 import blog5 from "../../assets/blogs/blog-5.jpeg";
 import blog6 from "../../assets/blogs/blog-6.jpeg";
+import blog7 from "../../assets/blogs/blog-7.jpeg";
+import blog8 from "../../assets/blogs/blog-8.jpeg";
+import blog9 from "../../assets/blogs/blog-10.png";
 
 export const postsData = [
   {
     title: "Nine Years of Flight, Firsts, and Feats!",
     excerpt:
       "Every great story has a beginning. Ours started in 2016 with a passion for flight and a drive to innovate.",
-
     image: blog1,
     linkedinUrl:
       "https://www.linkedin.com/posts/djs-phoenix_djsphoenix-droneteam-legacy-activity-7351978861766557697-kLM_/",
@@ -38,7 +40,6 @@ export const postsData = [
       "DJS Phoenix at Abhiyantriki 2024: A Recap of Innovation and Networking",
     excerpt:
       "DJS Phoenix participated in Abhiyantriki 2024, an annual two-day Tech Expo organized by KJ Somaiya College of Engineering.",
-
     image: blog4,
     linkedinUrl:
       "https://www.linkedin.com/posts/djs-phoenix_djsphoenix-abhiyantriki2024-uavinnovation-activity-7370128717056008194-hH4E/",
@@ -47,7 +48,6 @@ export const postsData = [
     title: "DJS Phoenix Secures Podium Finish at Drone Dexterity 2025!",
     excerpt:
       "We are proud to announce that DJS Phoenix has achieved 2nd Place at the Drone Dexterity 2025 competition!",
-
     image: blog5,
     linkedinUrl:
       "https://www.linkedin.com/posts/djs-phoenix_djsphoenix-droneracing-podiumfinish-activity-7371397616355409920-5tRd/",
@@ -56,9 +56,33 @@ export const postsData = [
     title: "Behind the Scenes of a Successful Drone Race",
     excerpt:
       "A great drone race requires more than just fast drones. It demands meticulous planning and robust technical execution.",
-
     image: blog6,
     linkedinUrl:
       "https://www.linkedin.com/posts/djs-phoenix_djsphoenix-behindthescenes-technicalexperts-activity-7375529990580224000-dX38/",
+  },
+  {
+    title: "DJS Phoenix x ATC Group: A Partnership in Innovation",
+    excerpt:
+      "DJS Phoenix is excited to share a heartfelt note of gratitude to ATC Group for supporting the team as a valued sponsor. This collaboration continues to strengthen the team's mission of pushing the boundaries of drone design, engineering and performance nationally.",
+    image: blog7,
+    linkedinUrl:
+      "https://www.linkedin.com/posts/djs-phoenix_djsphoenix-atcgroup-djsce-activity-7416889240405536768-Sacp?utm_source=share&utm_medium=member_desktop&rcm=ACoAAETddNgB7lEAQ5KbDVQpjlWzWpWEnwpZF9s",
+  },
+  {
+    title:
+      "DJS Phoenix Named National Finalist in ISRO Robotics Challenge 2025",
+    excerpt:
+      "We are honored to announce that DJS Phoenix has been distinguished as one of the Top 16 National Finalists in the ISRO Robotics Challenge (IRoC-U) 2025. Selected from a competitive field of over 1600 teams, we were privileged to be invited by ISRO to the National Space Day celebrations at Bharat Mandapam, New Delhi.",
+    image: blog8,
+    linkedinUrl:
+      "https://www.linkedin.com/posts/djs-phoenix_djsphoenix-isro-irocu2025-activity-7380239010608267264-uklX?utm_source=share&utm_medium=member_desktop&rcm=ACoAAETddNgB7lEAQ5KbDVQpjlWzWpWEnwpZF9s",
+  },
+  {
+    title: "Engineering for Impact: Our Journey at NIDAR 2025",
+    excerpt:
+      "Participating in the Disaster Management Mission at NIDAR 2025 (National Innovation Challenge for Drone Application and Research) was a defining moment for Team DJS Phoenix. Working on solutions for multiple payload dropping mechanisms and creating our 1st VTOL taught us how engineering can be a lifeline in real-world crises.",
+    image: blog9,
+    linkedinUrl:
+      "https://www.linkedin.com/posts/djs-phoenix_nidar2025-disastermanagement-djsphoenix-activity-7421609011285790720-7R-F?utm_source=share&utm_medium=member_desktop&rcm=ACoAAETddNgB7lEAQ5KbDVQpjlWzWpWEnwpZF9s",
   },
 ];

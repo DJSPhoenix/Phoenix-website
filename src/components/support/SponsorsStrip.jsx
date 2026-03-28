@@ -54,7 +54,7 @@ const SponsorsStrip = ({ heading, note, logos = [], sizeOverrides = {} }) => {
           <p className="text-sm sm:text-base text-gray-300 mt-2 px-4">{note}</p>
         )}
       </motion.div>
-      {logos.length === 5 ? (
+      {logos.length === 5 ?
         <div className="space-y-4 sm:space-y-6">
           <div className="flex items-center justify-center gap-3 sm:gap-6">
             {logos.slice(0, 3).map((logo, index) => {
@@ -74,6 +74,10 @@ const SponsorsStrip = ({ heading, note, logos = [], sizeOverrides = {} }) => {
                     style={{
                       maxHeight: "2.5rem",
                       transform: `scale(${scale})`,
+                      filter:
+                        logo.brightness ?
+                          `grayscale(1) invert(1) brightness(${logo.brightness})`
+                        : undefined,
                     }}
                     loading="lazy"
                   />
@@ -99,6 +103,10 @@ const SponsorsStrip = ({ heading, note, logos = [], sizeOverrides = {} }) => {
                     style={{
                       maxHeight: "2.5rem",
                       transform: `scale(${scale})`,
+                      filter:
+                        logo.brightness ?
+                          `grayscale(1) invert(1) brightness(${logo.brightness})`
+                        : undefined,
                     }}
                     loading="lazy"
                   />
@@ -107,8 +115,7 @@ const SponsorsStrip = ({ heading, note, logos = [], sizeOverrides = {} }) => {
             })}
           </div>
         </div>
-      ) : (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6 items-center justify-items-center">
+      : <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6 items-center justify-items-center">
           {logos.map((logo, index) => {
             const scale = logo.scale || sizeOverrides[logo.alt] || 1;
             return (
@@ -123,14 +130,21 @@ const SponsorsStrip = ({ heading, note, logos = [], sizeOverrides = {} }) => {
                   src={logo.src}
                   alt={logo.alt}
                   className="w-auto object-contain filter grayscale invert opacity-80 hover:opacity-100 transition"
-                  style={{ maxHeight: "2.5rem", transform: `scale(${scale})` }}
+                  style={{
+                    maxHeight: "2.5rem",
+                    transform: `scale(${scale})`,
+                    filter:
+                      logo.brightness ?
+                        `grayscale(1) invert(1) brightness(${logo.brightness})`
+                      : undefined,
+                  }}
                   loading="lazy"
                 />
               </motion.div>
             );
           })}
         </div>
-      )}
+      }
     </motion.section>
   );
 };

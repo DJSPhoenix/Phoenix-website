@@ -1,8 +1,4 @@
 import teamPhoto from "../../assets/team.jpeg";
-import ANSYS from "../../assets/Sponsors/ANSYS_logo.png";
-import Ethix from "../../assets/Sponsors/Ethixlogo.png";
-import SolidWorks from "../../assets/Sponsors/SolidWorks_Logo.png";
-import Techmentry from "../../assets/Sponsors/Techmentrylogo.png";
 
 export const aboutHero = {
   title: "About DJS Phoenix",
@@ -54,11 +50,4 @@ export const stats = [
   },
   { label: "Competitions Won", iconKey: "trophy", target: 8 },
   { label: "Events Participated", iconKey: "drone", target: 15, suffix: "+" },
-];
-
-export const sponsors = [
-  { src: ANSYS, alt: "ANSYS" },
-  { src: SolidWorks, alt: "SolidWorks" },
-  { src: Ethix, alt: "Ethix" },
-  { src: Techmentry, alt: "Techmentry" },
 ];

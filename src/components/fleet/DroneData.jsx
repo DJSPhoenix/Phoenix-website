@@ -7,7 +7,7 @@ const mediaMap = (() => {
       import: "default",
     });
     return Object.fromEntries(
-      Object.entries(files).map(([path, url]) => [path.split("/").pop(), url])
+      Object.entries(files).map(([path, url]) => [path.split("/").pop(), url]),
     );
   } catch (e) {
     return {};
@@ -32,15 +32,15 @@ export const defaultDrones = [
     status: "current",
     type: "Racing",
     year: "2024-2025",
-    image: mediaMap["Drone2.png"] || mediaMap["Drone2.jpg"],
+    image: mediaMap["Racing.png"],
     specs: { endurance: "11 min", range: "2.5 km", maxSpeed: "130 km/h" },
     highlightScore: 95,
   },
   {
-    id: "retired-4",
-    name: "Phoenix R4",
-    status: "retired",
-    type: "Racing",
+    id: "current-4",
+    name: "G.U.D.D.U",
+    status: "current",
+    type: "Recon",
     year: "2024-2025",
     image: mediaMap["Drone6.jpeg"],
     specs: { endurance: "8 min", range: "1.8 km", maxSpeed: "108 km/h" },
@@ -51,9 +51,8 @@ export const defaultDrones = [
     status: "current",
     type: "Package Delivery",
     year: "2024-2025",
-    image: mediaMap["Drone8.jpg"] || mediaMap["Drone8.png"],
+    image: mediaMap["Hexa.jpeg"],
     specs: { payload: "2 kg", endurance: "N/A", range: "N/A" },
-    wip: true,
     highlightScore: 80,
   },
   {
@@ -62,9 +61,8 @@ export const defaultDrones = [
     status: "retired",
     type: "Recon",
     year: "2024-2025",
-    image: mediaMap["Drone9.jpg"] || mediaMap["Drone9.png"],
+    image: mediaMap["Vtol.jpeg"],
     specs: { sensor: "Thermal", endurance: "N/A", range: "N/A" },
-    wip: true,
   },
   // Pre-2024 Drones
   {
@@ -93,14 +91,5 @@ export const defaultDrones = [
     year: "pre-2024",
     image: mediaMap["Drone5.png"],
     specs: { endurance: "25 min", range: "3.5 km", maxSpeed: "60 km/h" },
-  },
-  {
-    id: "retired-5",
-    name: "Phoenix R5",
-    status: "retired",
-    type: "Racing",
-    year: "pre-2024",
-    image: mediaMap["Drone7.jpg"],
-    specs: { endurance: "9 min", range: "2.0 km", maxSpeed: "112 km/h" },
   },
 ];

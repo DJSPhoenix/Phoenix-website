@@ -19,18 +19,18 @@ import {
 } from "../components/support/supportData";
 
 import ANSYSLogo from "../assets/Sponsors/ANSYS_logo.png";
-import EthixLogo from "../assets/Sponsors/Ethixlogo.png";
 import SolidWorksLogo from "../assets/Sponsors/SolidWorks_Logo.png";
-import TechmentryLogo from "../assets/Sponsors/Techmentrylogo.png";
+import NinetronLogo from "../assets/Sponsors/Ninetron_logo.png";
+import CUAVLogo from "../assets/Sponsors/cuav_logo.png";
 import ATCLogo from "../assets/Sponsors/atclogo.png";
 
 const Support = () => {
   const sponsorLogos = [
-    { src: ANSYSLogo, alt: "ANSYS" },
-    { src: SolidWorksLogo, alt: "SolidWorks" },
-    { src: EthixLogo, alt: "Ethix" },
-    { src: TechmentryLogo, alt: "Techmentry" },
-    { src: ATCLogo, alt: "ATC Group", scale: 2 },
+    { src: ANSYSLogo, alt: "ANSYS", brightness: 5 },
+    { src: SolidWorksLogo, alt: "SolidWorks", brightness: 5 },
+    { src: NinetronLogo, alt: "Ninetron", brightness: 5 },
+    { src: CUAVLogo, alt: "CUAV", brightness: 5 },
+    { src: ATCLogo, alt: "ATC Group", brightness: 5, scale: 2.5 },
   ];
 
   const handleContactSubmit = (data) => {

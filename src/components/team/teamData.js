@@ -1,144 +1,74 @@
+// 2025-26 Core Team
+import RatneshAmrute from "../../assets/team/2025-26/RatneshAmrute.jpeg";
+import AyushPatel from "../../assets/team/2025-26/AyushPatel.jpg";
+import HarshJain from "../../assets/team/2025-26/HarshJain.jpeg";
+import HitanshuVaru from "../../assets/team/2025-26/HitanshuVaru.jpg";
+import RajasRege from "../../assets/team/2025-26/RajasRege.jpeg";
+import RitikaDoshi from "../../assets/team/2025-26/RitikaDoshi.jpg";
+import SakshiPatel from "../../assets/team/2025-26/SakshiPatel.png";
+import ShantanooAher from "../../assets/team/2025-26/ShantanooAher.jpeg";
+import SohamShenoy from "../../assets/team/2025-26/SohamShenoy.jpg";
+import VaibhavSingh from "../../assets/team/2025-26/VaibhavSingh.jpeg";
+
 export const coreTeamCards = [
   {
-    description: "Captain",
-    title: "Prajwal Patil",
-    src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&h=500&fit=crop&crop=face",
-    instagramLink: "https://instagram.com/prajwalpatil",
-    linkedinLink: "https://linkedin.com/in/prajwalpatil",
+    Title: "Captain",
+    Name: "Ratnesh Amrute",
+    src: RatneshAmrute,
+    linkedinLink: "https://www.linkedin.com/in/ratneshamrute/",
   },
   {
-    description: "Vice Captain",
-    title: "Akshansh Dwivedi",
-    src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&h=500&fit=crop&crop=face",
-    instagramLink: "https://instagram.com/akshanshdwivedi",
-    linkedinLink: "https://linkedin.com/in/akshanshdwivedi",
+    Title: "Vice Captain",
+    Name: "Shantanoo Aher",
+    src: ShantanooAher,
+    linkedinLink: "https://www.linkedin.com/in/shantanoo-aher-345816284/",
   },
   {
-    description: "Team manager & Coding head",
-    title: "Deevi Nandu",
-    src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&h=500&fit=crop&crop=face",
-    instagramLink: "https://instagram.com/deevinandu",
-    linkedinLink: "https://linkedin.com/in/deevinandu",
+    Title: "Vice Captain",
+    Name: "Ayush Patel",
+    src: AyushPatel,
+    linkedinLink: "https://www.linkedin.com/in/ayushptl1810/",
   },
   {
-    description: "Research & Development Lead",
-    title: "Dr. Emily Watson",
-    src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&h=500&fit=crop&crop=face",
-    instagramLink: "https://instagram.com/khushiparekh",
-    linkedinLink: "https://linkedin.com/in/khushiparekh",
+    Title: "Team Manager and Mechanical Head",
+    Name: "Hitanshu Varu",
+    src: HitanshuVaru,
+    linkedinLink: "https://www.linkedin.com/in/hitanshu-varu-190a951b8/",
   },
   {
-    description: "Mechanical Design Lead",
-    title: "David Kim",
-    src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=500&fit=crop&crop=face",
-    instagramLink: "https://instagram.com/davidkim",
-    linkedinLink: "https://linkedin.com/in/davidkim",
+    Title: "Mechanical Head",
+    Name: "Sakshi Patel",
+    src: SakshiPatel,
+    linkedinLink: "https://www.linkedin.com/in/sakshi-patel-664478381/",
   },
   {
-    description: "AI & Machine Learning Lead",
-    title: "Dr. Robert Kumar",
-    src: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&h=500&fit=crop&crop=face",
-    linkedinLink: "https://linkedin.com",
+    Title: "Electronics Head",
+    Name: "Soham Shenoy",
+    src: SohamShenoy,
+    linkedinLink: "https://www.linkedin.com/in/soham-shenoy-06a06937b/",
   },
   {
-    description: "Operations Manager",
-    title: "Lisa Thompson",
-    src: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=500&h=500&fit=crop&crop=face",
-    linkedinLink: "https://linkedin.com",
+    Title: "Coding Head",
+    Name: "Rajas Rege",
+    src: RajasRege,
+    linkedinLink: "https://www.linkedin.com/in/rajas-rege-8570472a3/",
   },
   {
-    description: "Business Development Lead",
-    title: "Maria Gonzalez",
-    src: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&h=500&fit=crop&crop=face",
-    linkedinLink: "https://linkedin.com",
+    Title: "ML Head",
+    Name: "Harsh Jain",
+    src: HarshJain,
+    linkedinLink: "https://www.linkedin.com/in/harsh-jain-82243128b/",
   },
   {
-    description: "Electronics Specialist",
-    title: "James Wilson",
-    src: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=500&h=500&fit=crop&crop=face",
-    linkedinLink: "https://linkedin.com",
+    Title: "Simulations Head",
+    Name: "Vaibhav Singh",
+    src: VaibhavSingh,
+    linkedinLink: "https://www.linkedin.com/in/vaibhav1206/",
   },
   {
-    description: "Project Coordinator",
-    title: "Anna Rodriguez",
-    src: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=500&h=500&fit=crop&crop=face",
-    linkedinLink: "https://linkedin.com",
-  },
-  {
-    description: "Flight Operations Specialist",
-    title: "Michael Chen",
-    src: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&h=500&fit=crop&crop=face",
-    instagramLink: "https://instagram.com/michaelchen",
-    linkedinLink: "https://linkedin.com/in/michaelchen",
-  },
-  {
-    description: "Quality Assurance Lead",
-    title: "Sarah Johnson",
-    src: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=500&h=500&fit=crop&crop=face",
-    instagramLink: "https://instagram.com/sarahjohnson",
-    linkedinLink: "https://linkedin.com/in/sarahjohnson",
-  },
-];
-
-export const juniorCoreCards = [
-  {
-    description: "Computer Vision Engineer",
-    title: "Jennifer Park",
-    src: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500&h=500&fit=crop&crop=face",
-    linkedinLink: "https://linkedin.com",
-  },
-  {
-    description: "Embedded Systems Developer",
-    title: "Carlos Martinez",
-    src: "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=500&h=500&fit=crop&crop=face",
-    linkedinLink: "https://linkedin.com",
-  },
-  {
-    description: "UX/UI Designer",
-    title: "Sophie Anderson",
-    src: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=500&h=500&fit=crop&crop=face",
-    linkedinLink: "https://linkedin.com",
-  },
-  {
-    description: "Test Engineer",
-    title: "Ryan Taylor",
-    src: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&h=500&fit=crop&crop=face",
-    linkedinLink: "https://linkedin.com",
-  },
-  {
-    description: "Data Analyst",
-    title: "Priya Patel",
-    src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&h=500&fit=crop&crop=face",
-    linkedinLink: "https://linkedin.com",
-  },
-  {
-    description: "Sensor Integration Specialist",
-    title: "Ahmed Hassan",
-    src: "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=500&h=500&fit=crop&crop=face",
-    linkedinLink: "https://linkedin.com",
-  },
-  {
-    description: "Algorithm Developer",
-    title: "Isabella Lopez",
-    src: "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=500&h=500&fit=crop&crop=face",
-    linkedinLink: "https://linkedin.com",
-  },
-  {
-    description: "Systems Integrator",
-    title: "Jake Thompson",
-    src: "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=500&h=500&fit=crop&crop=face",
-    linkedinLink: "https://linkedin.com",
-  },
-  {
-    description: "Communication Systems Engineer",
-    title: "Natasha Volkov",
-    src: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=500&h=500&fit=crop&crop=face",
-    linkedinLink: "https://linkedin.com",
-  },
-  {
-    description: "Flight Test Pilot",
-    title: "Tom Anderson",
-    src: "https://images.unsplash.com/photo-1567515004624-219c11d31f2e?w=500&h=500&fit=crop&crop=face",
-    linkedinLink: "https://linkedin.com",
+    Title: "Creatives Head",
+    Name: "Ritika Doshi",
+    src: RitikaDoshi,
+    linkedinLink: "https://www.linkedin.com/in/ritika-doshi-275360320/",
   },
 ];
