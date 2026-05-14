@@ -23,6 +23,7 @@ import SolidWorksLogo from "../assets/Sponsors/SolidWorks_Logo.png";
 import NinetronLogo from "../assets/Sponsors/Ninetron_logo.png";
 import CUAVLogo from "../assets/Sponsors/CUAV_logo.png";
 import ATCLogo from "../assets/Sponsors/atclogo.png";
+import AltiumLogo from "../assets/Sponsors/altium-designer-software.png";
 
 const Support = () => {
   const sponsorLogos = [
@@ -31,6 +32,7 @@ const Support = () => {
     { src: NinetronLogo, alt: "Ninetron", brightness: 5 },
     { src: CUAVLogo, alt: "CUAV", brightness: 5 },
     { src: ATCLogo, alt: "ATC Group", brightness: 5, scale: 2.5 },
+    { src: AltiumLogo, alt: "Altium Designer", brightness: 5, scale: 2 },
   ];
 
   const handleContactSubmit = (data) => {

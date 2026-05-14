@@ -80,7 +80,7 @@ export const inKindWishlist = [
 
 export const currentSponsors = {
   heading: "Our Current Supporters",
-  note: "Thank you for powering our mission. Displayed mid‑page to avoid duplication with the footer.",
+  note: "Thank you for powering our mission.",
   logos: [
     // Add logo imports in the page to avoid hardcoding paths here
   ],
