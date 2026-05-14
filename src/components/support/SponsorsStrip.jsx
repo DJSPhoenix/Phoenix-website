@@ -54,15 +54,15 @@ const SponsorsStrip = ({ heading, note, logos = [], sizeOverrides = {} }) => {
           <p className="text-sm sm:text-base text-gray-300 mt-2 px-4">{note}</p>
         )}
       </motion.div>
-      {logos.length === 5 ?
+      {logos.length >= 5 && logos.length <= 6 ? (
         <div className="space-y-4 sm:space-y-6">
-          <div className="flex items-center justify-center gap-3 sm:gap-6">
-            {logos.slice(0, 3).map((logo, index) => {
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6">
+            {logos.slice(0, 3).map((logo) => {
               const scale = logo.scale || sizeOverrides[logo.alt] || 1;
               return (
                 <motion.div
                   key={logo.alt}
-                  className="rounded-xl border border-white/15 bg-white/5 p-3 sm:p-4 flex items-center justify-center transition-all hover:border-orange-500/40 hover:bg-white/10"
+                  className="rounded-xl border border-white/15 bg-white/5 p-3 sm:p-4 flex items-center justify-center transition-all hover:border-orange-500/40 hover:bg-white/10 min-w-[140px] sm:min-w-[200px]"
                   variants={logoVariants}
                   whileHover={{ y: -8, scale: 1.05 }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
@@ -74,9 +74,8 @@ const SponsorsStrip = ({ heading, note, logos = [], sizeOverrides = {} }) => {
                     style={{
                       maxHeight: "2.5rem",
                       transform: `scale(${scale})`,
-                      filter:
-                        logo.brightness ?
-                          `grayscale(1) invert(1) brightness(${logo.brightness})`
+                      filter: logo.brightness
+                        ? `grayscale(1) invert(1) brightness(${logo.brightness})`
                         : undefined,
                     }}
                     loading="lazy"
@@ -85,13 +84,13 @@ const SponsorsStrip = ({ heading, note, logos = [], sizeOverrides = {} }) => {
               );
             })}
           </div>
-          <div className="flex items-center justify-center gap-3 sm:gap-6">
-            {logos.slice(3, 5).map((logo, index) => {
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6">
+            {logos.slice(3).map((logo) => {
               const scale = logo.scale || sizeOverrides[logo.alt] || 1;
               return (
                 <motion.div
                   key={logo.alt}
-                  className="rounded-xl border border-white/15 bg-white/5 p-3 sm:p-4 flex items-center justify-center transition-all hover:border-orange-500/40 hover:bg-white/10 min-w-30"
+                  className="rounded-xl border border-white/15 bg-white/5 p-3 sm:p-4 flex items-center justify-center transition-all hover:border-orange-500/40 hover:bg-white/10 min-w-[140px] sm:min-w-[200px]"
                   variants={logoVariants}
                   whileHover={{ y: -8, scale: 1.05 }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
@@ -103,9 +102,8 @@ const SponsorsStrip = ({ heading, note, logos = [], sizeOverrides = {} }) => {
                     style={{
                       maxHeight: "2.5rem",
                       transform: `scale(${scale})`,
-                      filter:
-                        logo.brightness ?
-                          `grayscale(1) invert(1) brightness(${logo.brightness})`
+                      filter: logo.brightness
+                        ? `grayscale(1) invert(1) brightness(${logo.brightness})`
                         : undefined,
                     }}
                     loading="lazy"
@@ -115,13 +113,14 @@ const SponsorsStrip = ({ heading, note, logos = [], sizeOverrides = {} }) => {
             })}
           </div>
         </div>
-      : <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6 items-center justify-items-center">
-          {logos.map((logo, index) => {
+      ) : (
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6 items-center justify-items-center">
+          {logos.map((logo) => {
             const scale = logo.scale || sizeOverrides[logo.alt] || 1;
             return (
               <motion.div
                 key={logo.alt}
-                className="rounded-xl border border-white/15 bg-white/5 p-3 sm:p-4 flex items-center justify-center transition-all hover:border-orange-500/40 hover:bg-white/10"
+                className="rounded-xl border border-white/15 bg-white/5 p-3 sm:p-4 flex items-center justify-center transition-all hover:border-orange-500/40 hover:bg-white/10 w-full"
                 variants={logoVariants}
                 whileHover={{ y: -8, scale: 1.05 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
@@ -133,9 +132,8 @@ const SponsorsStrip = ({ heading, note, logos = [], sizeOverrides = {} }) => {
                   style={{
                     maxHeight: "2.5rem",
                     transform: `scale(${scale})`,
-                    filter:
-                      logo.brightness ?
-                        `grayscale(1) invert(1) brightness(${logo.brightness})`
+                    filter: logo.brightness
+                      ? `grayscale(1) invert(1) brightness(${logo.brightness})`
                       : undefined,
                   }}
                   loading="lazy"
@@ -144,7 +142,7 @@ const SponsorsStrip = ({ heading, note, logos = [], sizeOverrides = {} }) => {
             );
           })}
         </div>
-      }
+      )}
     </motion.section>
   );
 };
