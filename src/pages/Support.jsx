@@ -25,6 +25,7 @@ import CUAVLogo from "../assets/Sponsors/CUAV_logo.png";
 import ATCLogo from "../assets/Sponsors/atclogo.png";
 import AltiumLogo from "../assets/Sponsors/altium-designer-software.png";
 import FalconSkyworksLogo from "../assets/Sponsors/Falcon_Skyworks.png";
+import TMotorLogo from "../assets/Sponsors/tmotor_logo.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -32,9 +33,9 @@ const Support = () => {
   const sponsorLogos = [
     { src: ANSYSLogo, alt: "ANSYS", brightness: 5 },
     { src: SolidWorksLogo, alt: "SolidWorks", brightness: 5 },
-    { src: NinetronLogo, alt: "Ninetron", brightness: 5 },
+    { src: NinetronLogo, alt: "Ninetron", brightness: 5, scale: 1.2 },
     { src: CUAVLogo, alt: "CUAV", brightness: 5 },
-    { src: ATCLogo, alt: "ATC Group", brightness: 5, scale: 2.5 },
+    { src: ATCLogo, alt: "ATC Group", brightness: 5, scale: 3.5 },
     { src: AltiumLogo, alt: "Altium Designer", brightness: 5, scale: 2 },
     {
       src: FalconSkyworksLogo,
@@ -42,13 +43,14 @@ const Support = () => {
       brightness: 5,
       scale: 1.5,
     },
+    { src: TMotorLogo, alt: "T-Motor", brightness: 5, scale: 6 },
   ];
 
   const handleContactSubmit = async (data) => {
     const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
     if (!accessKey) {
       throw new Error(
-        "Sponsorship form is not configured. Please set VITE_WEB3FORMS_ACCESS_KEY in the environment."
+        "Sponsorship form is not configured. Please set VITE_WEB3FORMS_ACCESS_KEY in the environment.",
       );
     }
 
@@ -74,7 +76,9 @@ const Support = () => {
 
     const result = await response.json();
     if (!result.success) {
-      throw new Error(result.message || "Failed to send message. Please try again.");
+      throw new Error(
+        result.message || "Failed to send message. Please try again.",
+      );
     }
   };
 
