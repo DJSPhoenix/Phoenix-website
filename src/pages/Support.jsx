@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "../components/common/Navbar";
@@ -81,14 +81,6 @@ const Support = () => {
       );
     }
   };
-
-  // Force ScrollTrigger calculations to settle on mount
-  useEffect(() => {
-    const t = setTimeout(() => {
-      ScrollTrigger.refresh();
-    }, 250);
-    return () => clearTimeout(t);
-  }, []);
 
   return (
     <div className="min-h-screen bg-black text-white bg-grid-mask bg-noise-mask">

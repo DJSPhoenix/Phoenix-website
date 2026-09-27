@@ -16,9 +16,9 @@ const OurStory = ({ paragraphs = [] }) => {
           y: 0,
           scrollTrigger: {
             trigger: ".our-story-header",
-            start: "top 95%",
-            end: "top 70%",
-            scrub: 1,
+            start: "top bottom",
+            end: "top 72%",
+            scrub: true,
           },
         }
       );
@@ -34,9 +34,9 @@ const OurStory = ({ paragraphs = [] }) => {
             y: 0,
             scrollTrigger: {
               trigger: item,
-              start: "top 90%",
-              end: "top 65%",
-              scrub: 1,
+              start: "top bottom",
+              end: "top 72%",
+              scrub: true,
             },
           }
         );

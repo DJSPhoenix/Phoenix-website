@@ -17,12 +17,12 @@ const SponsorsStrip = ({ heading, note, logos = [], sizeOverrides = {} }) => {
         {
           opacity: 1,
           y: 0,
-          duration: 0.6,
-          ease: "power2.out",
+          ease: "none",
           scrollTrigger: {
             trigger: ".sponsors-header",
-            start: "top 92%",
-            toggleActions: "play none none reverse",
+            start: "top bottom",
+            end: "top 72%",
+            scrub: true,
           },
         }
       );
@@ -36,12 +36,12 @@ const SponsorsStrip = ({ heading, note, logos = [], sizeOverrides = {} }) => {
           {
             opacity: 1,
             y: 0,
-            duration: 0.6,
-            ease: "power2.out",
+            ease: "none",
             scrollTrigger: {
               trigger: logo,
-              start: "top 92%",
-              toggleActions: "play none none reverse",
+              start: "top bottom",
+              end: "top 72%",
+              scrub: true,
             },
           }
         );
@@ -71,21 +71,23 @@ const SponsorsStrip = ({ heading, note, logos = [], sizeOverrides = {} }) => {
               return (
                 <div
                   key={logo.alt}
-                  className="sponsor-logo-item opacity-0 rounded-xl border border-white/15 bg-white/5 p-3 sm:p-4 flex items-center justify-center transition-all duration-300 hover:border-orange-500/40 hover:bg-white/10 min-w-[140px] sm:min-w-[200px] hover:-translate-y-2 hover:scale-[1.03]"
+                  className="sponsor-logo-item opacity-0"
                 >
-                  <img
-                    src={logo.src}
-                    alt={logo.alt}
-                    className="w-auto object-contain filter grayscale invert opacity-80 hover:opacity-100 transition"
-                    style={{
-                      maxHeight: "2.5rem",
-                      transform: `scale(${scale})`,
-                      filter: logo.brightness
-                        ? `grayscale(1) invert(1) brightness(${logo.brightness})`
-                        : undefined,
-                    }}
-                    loading="lazy"
-                  />
+                  <div className="rounded-xl border border-white/15 bg-white/5 p-3 sm:p-4 flex items-center justify-center transition-all duration-300 hover:border-orange-500/40 hover:bg-white/10 min-w-[140px] sm:min-w-[200px] hover:-translate-y-2 hover:scale-[1.03]">
+                    <img
+                      src={logo.src}
+                      alt={logo.alt}
+                      className="w-auto object-contain filter grayscale invert opacity-80 hover:opacity-100 transition"
+                      style={{
+                        maxHeight: "2.5rem",
+                        transform: `scale(${scale})`,
+                        filter: logo.brightness
+                          ? `grayscale(1) invert(1) brightness(${logo.brightness})`
+                          : undefined,
+                      }}
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
               );
             })}
@@ -96,21 +98,23 @@ const SponsorsStrip = ({ heading, note, logos = [], sizeOverrides = {} }) => {
               return (
                 <div
                   key={logo.alt}
-                  className="sponsor-logo-item opacity-0 rounded-xl border border-white/15 bg-white/5 p-3 sm:p-4 flex items-center justify-center transition-all duration-300 hover:border-orange-500/40 hover:bg-white/10 min-w-[140px] sm:min-w-[200px] hover:-translate-y-2 hover:scale-[1.03]"
+                  className="sponsor-logo-item opacity-0"
                 >
-                  <img
-                    src={logo.src}
-                    alt={logo.alt}
-                    className="w-auto object-contain filter grayscale invert opacity-80 hover:opacity-100 transition"
-                    style={{
-                      maxHeight: "2.5rem",
-                      transform: `scale(${scale})`,
-                      filter: logo.brightness
-                        ? `grayscale(1) invert(1) brightness(${logo.brightness})`
-                        : undefined,
-                    }}
-                    loading="lazy"
-                  />
+                  <div className="rounded-xl border border-white/15 bg-white/5 p-3 sm:p-4 flex items-center justify-center transition-all duration-300 hover:border-orange-500/40 hover:bg-white/10 min-w-[140px] sm:min-w-[200px] hover:-translate-y-2 hover:scale-[1.03]">
+                    <img
+                      src={logo.src}
+                      alt={logo.alt}
+                      className="w-auto object-contain filter grayscale invert opacity-80 hover:opacity-100 transition"
+                      style={{
+                        maxHeight: "2.5rem",
+                        transform: `scale(${scale})`,
+                        filter: logo.brightness
+                          ? `grayscale(1) invert(1) brightness(${logo.brightness})`
+                          : undefined,
+                      }}
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
               );
             })}
@@ -123,21 +127,23 @@ const SponsorsStrip = ({ heading, note, logos = [], sizeOverrides = {} }) => {
             return (
               <div
                 key={logo.alt}
-                className="sponsor-logo-item opacity-0 rounded-xl border border-white/15 bg-white/5 p-3 sm:p-4 flex items-center justify-center transition-all duration-300 hover:border-orange-500/40 hover:bg-white/10 w-full hover:-translate-y-2 hover:scale-[1.03]"
+                className="sponsor-logo-item opacity-0 w-full"
               >
-                <img
-                  src={logo.src}
-                  alt={logo.alt}
-                  className="w-auto object-contain filter grayscale invert opacity-80 hover:opacity-100 transition"
-                  style={{
-                    maxHeight: "2.5rem",
-                    transform: `scale(${scale})`,
-                    filter: logo.brightness
-                      ? `grayscale(1) invert(1) brightness(${logo.brightness})`
-                      : undefined,
-                  }}
-                  loading="lazy"
-                />
+                <div className="rounded-xl border border-white/15 bg-white/5 p-3 sm:p-4 flex items-center justify-center transition-all duration-300 hover:border-orange-500/40 hover:bg-white/10 w-full hover:-translate-y-2 hover:scale-[1.03]">
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="w-auto object-contain filter grayscale invert opacity-80 hover:opacity-100 transition"
+                    style={{
+                      maxHeight: "2.5rem",
+                      transform: `scale(${scale})`,
+                      filter: logo.brightness
+                        ? `grayscale(1) invert(1) brightness(${logo.brightness})`
+                        : undefined,
+                    }}
+                    loading="lazy"
+                  />
+                </div>
               </div>
             );
           })}

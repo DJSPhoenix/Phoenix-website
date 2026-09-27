@@ -54,9 +54,9 @@ const LocationMap = () => {
           y: 0,
           scrollTrigger: {
             trigger: ".map-header",
-            start: "top 95%",
-            end: "top 70%",
-            scrub: 1,
+            start: "top bottom",
+            end: "top 72%",
+            scrub: true,
           },
         }
       );
@@ -70,9 +70,9 @@ const LocationMap = () => {
           x: 0,
           scrollTrigger: {
             trigger: ".map-left-card",
-            start: "top 90%",
-            end: "top 60%",
-            scrub: 1,
+            start: "top bottom",
+            end: "top 72%",
+            scrub: true,
           },
         }
       );
@@ -86,9 +86,9 @@ const LocationMap = () => {
           x: 0,
           scrollTrigger: {
             trigger: ".map-right-card",
-            start: "top 90%",
-            end: "top 60%",
-            scrub: 1,
+            start: "top bottom",
+            end: "top 72%",
+            scrub: true,
           },
         }
       );

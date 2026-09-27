@@ -43,9 +43,9 @@ const AboutTeam = () => {
           y: 0,
           scrollTrigger: {
             trigger: ".about-team-header",
-            start: "top 95%",
-            end: "top 65%",
-            scrub: 1,
+            start: "top bottom",
+            end: "top 72%",
+            scrub: true,
           },
         },
       );
@@ -59,9 +59,9 @@ const AboutTeam = () => {
           x: 0,
           scrollTrigger: {
             trigger: ".about-team-mission",
-            start: "top 90%",
-            end: "top 55%",
-            scrub: 1,
+            start: "top bottom",
+            end: "top 72%",
+            scrub: true,
           },
         },
       );
@@ -76,9 +76,9 @@ const AboutTeam = () => {
           scale: 1,
           scrollTrigger: {
             trigger: ".about-team-photo",
-            start: "top 90%",
-            end: "top 50%",
-            scrub: 1,
+            start: "top bottom",
+            end: "top 72%",
+            scrub: true,
           },
         },
       );
@@ -92,9 +92,9 @@ const AboutTeam = () => {
           x: 0,
           scrollTrigger: {
             trigger: ".about-team-vision",
-            start: "top 90%",
-            end: "top 55%",
-            scrub: 1,
+            start: "top bottom",
+            end: "top 72%",
+            scrub: true,
           },
         },
       );

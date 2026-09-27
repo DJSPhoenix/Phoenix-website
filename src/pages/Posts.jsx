@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -9,14 +9,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Posts = () => {
   const containerRef = useRef(null);
-
-  // Force ScrollTrigger refresh on mount to resolve early trigger calculations
-  useEffect(() => {
-    const t = setTimeout(() => {
-      ScrollTrigger.refresh();
-    }, 250);
-    return () => clearTimeout(t);
-  }, []);
 
   useGSAP(
     () => {

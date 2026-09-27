@@ -166,8 +166,8 @@ const Fleet = () => {
                   lineHeight: 1.65,
                 }}
               >
-                Two current drones and five retired builds. Purpose-built for
-                racing, mapping and research.
+                A growing fleet of purpose-built drones for racing, mapping and
+                research.
               </p>
             </div>
 

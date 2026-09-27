@@ -9,6 +9,7 @@ import blog8 from "../../assets/blogs/blog-8.jpeg";
 import blog9 from "../../assets/blogs/blog-9.jpeg";
 import blog10 from "../../assets/blogs/blog-10.jpeg";
 import blog11 from "../../assets/blogs/blog-11.jpeg";
+import heroImage from "../../assets/HeroImage.png";
 
 export const postsData = [
   {
@@ -103,5 +104,21 @@ export const postsData = [
     linkedinUrl:
       "https://www.linkedin.com/posts/djs-phoenix_falcon-skyworks-x-djs-phoenix-we-activity-7474862293143478272-XVYL?utm_source=share&utm_medium=member_desktop&rcm=ACoAAETddNgB7lEAQ5KbDVQpjlWzWpWEnwpZF9s",
     imageFit: "contain",
+  },
+  {
+    title: "Onward to Phase 2: DJS Phoenix Qualifies for AeroTHON 2026",
+    excerpt:
+      "DJS Phoenix has cleared Phase 1 of the SAE AeroTHON 2026 Rotorcraft Systems Challenge and is moving forward to the next stage of the competition.",
+    image: blog2,
+    linkedinUrl:
+      "https://www.linkedin.com/posts/djs-phoenix_aerothon2026-phase1-drone-activity-7478717160505376768-DwR9?utm_source=share&utm_medium=member_desktop&rcm=ACoAAETddNgB7lEAQ5KbDVQpjlWzWpWEnwpZF9s",
+  },
+  {
+    title: "A New Digital Chapter Begins: DJS Phoenix Website Launch",
+    excerpt:
+      "We are proud to launch the official DJS Phoenix website—a new home for our projects, team, sponsors, engineering journey and competition updates.",
+    image: heroImage,
+    linkedinUrl:
+      "https://www.linkedin.com/posts/djs-phoenix_djsphoenix-websitelaunch-engineering-activity-7480926978456436736-ibGh?utm_source=share&utm_medium=member_desktop&rcm=ACoAAETddNgB7lEAQ5KbDVQpjlWzWpWEnwpZF9s",
   },
 ];

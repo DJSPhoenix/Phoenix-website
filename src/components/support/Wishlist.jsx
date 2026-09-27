@@ -49,35 +49,39 @@ const WishlistCard = ({ group }) => {
 
   return (
     <div
-      ref={cardRef}
-      onMouseEnter={onEnter}
-      onMouseMove={onMove}
-      onMouseLeave={onLeave}
-      className="wishlist-group-item opacity-0 h-full rounded-2xl border transition-all duration-300 w-full cursor-default"
-      style={{
-        background: hovered 
-          ? `radial-gradient(350px circle at ${coords.x}px ${coords.y}px, ${style.glow}, transparent 80%), rgba(10, 10, 10, 0.7)`
-          : "rgba(10, 10, 10, 0.4)",
-        borderColor: hovered ? `hsla(${style.hue}, 70%, 50%, 0.35)` : "rgba(255, 255, 255, 0.06)",
-        boxShadow: hovered ? `0 0 30px hsla(${style.hue}, 90%, 60%, 0.04)` : "none",
-        backdropFilter: "blur(20px)",
-        WebkitBackdropFilter: "blur(20px)"
-      }}
+      className="wishlist-group-item opacity-0 h-full w-full"
     >
-      <div className="relative p-6 sm:p-8 flex flex-col justify-between h-full min-h-[200px]">
-        <div>
-          <div className="flex items-center justify-between gap-4 mb-5">
-            <h3 className="text-white font-display text-xl sm:text-2xl font-bold">
-              {group.category}
-            </h3>
-            <a
-              href={`?supportType=In%E2%80%91Kind&interest=${encodeURIComponent(
-                group.category
-              )}#contact`}
-              className="ui-text inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs border border-orange-500 bg-orange-500/10 text-white hover:bg-orange-500/20 transition-all duration-300 active:scale-95 hover:scale-105"
-            >
-              Sponsor
-            </a>
+      <div
+        ref={cardRef}
+        onMouseEnter={onEnter}
+        onMouseMove={onMove}
+        onMouseLeave={onLeave}
+        className="relative h-full rounded-2xl border transition-all duration-300 w-full cursor-default"
+        style={{
+          background: hovered
+            ? `radial-gradient(350px circle at ${coords.x}px ${coords.y}px, ${style.glow}, transparent 80%), rgba(10, 10, 10, 0.7)`
+            : "rgba(10, 10, 10, 0.4)",
+          borderColor: hovered ? `hsla(${style.hue}, 70%, 50%, 0.35)` : "rgba(255, 255, 255, 0.06)",
+          boxShadow: hovered ? `0 0 30px hsla(${style.hue}, 90%, 60%, 0.04)` : "none",
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)"
+        }}
+      >
+        <div className="relative p-6 sm:p-8 flex flex-col justify-between h-full min-h-[200px]">
+          <div>
+            <div className="flex items-center justify-between gap-4 mb-5">
+              <h3 className="text-white font-display text-xl sm:text-2xl font-bold">
+                {group.category}
+              </h3>
+              <a
+                href={`?supportType=In%E2%80%91Kind&interest=${encodeURIComponent(
+                  group.category
+                )}#contact`}
+                className="ui-text inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs border border-orange-500 bg-orange-500/10 text-white hover:bg-orange-500/20 transition-all duration-300 active:scale-95 hover:scale-105"
+              >
+                Sponsor
+              </a>
+            </div>
           </div>
           
           <ul className="block sm:hidden space-y-2">
@@ -116,12 +120,12 @@ const Wishlist = ({ groups }) => {
         {
           opacity: 1,
           y: 0,
-          duration: 0.6,
-          ease: "power2.out",
+          ease: "none",
           scrollTrigger: {
             trigger: ".wishlist-header",
-            start: "top 92%",
-            toggleActions: "play none none reverse",
+            start: "top bottom",
+            end: "top 72%",
+            scrub: true,
           },
         }
       );
@@ -135,12 +139,12 @@ const Wishlist = ({ groups }) => {
           {
             opacity: 1,
             y: 0,
-            duration: 0.7,
-            ease: "power2.out",
+            ease: "none",
             scrollTrigger: {
               trigger: item,
-              start: "top 92%",
-              toggleActions: "play none none reverse",
+              start: "top bottom",
+              end: "top 72%",
+              scrub: true,
             },
           }
         );

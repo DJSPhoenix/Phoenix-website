@@ -9,12 +9,14 @@ import SiteFooter from "./components/common/SiteFooter";
 import About from "./pages/About";
 import Support from "./pages/Support";
 import PageWrapper from "./components/common/PageWrapper";
+import SmoothScroll from "./components/common/SmoothScroll";
 
 const App = () => {
   const location = useLocation();
 
   return (
     <div className="min-h-screen bg-black relative">
+      <SmoothScroll />
       <PageWrapper key={location.pathname}>
         <Routes location={location}>
           <Route path="/" element={<Home />} />

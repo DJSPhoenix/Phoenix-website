@@ -30,6 +30,14 @@ function ScrollExpandMedia({
   }, [mediaType]);
 
   useEffect(() => {
+    window.dispatchEvent(
+      new CustomEvent(
+        mediaFullyExpanded ? "home-hero-expanded" : "home-hero-collapsed",
+      ),
+    );
+  }, [mediaFullyExpanded]);
+
+  useEffect(() => {
     const handleWheel = (e) => {
       if (mediaFullyExpanded && e.deltaY < 0 && window.scrollY <= 5) {
         setMediaFullyExpanded(false);
@@ -134,6 +142,7 @@ function ScrollExpandMedia({
   return (
     <div
       ref={sectionRef}
+      data-lenis-prevent={!mediaFullyExpanded ? "true" : undefined}
       className="transition-colors duration-700 ease-in-out overflow-x-hidden"
     >
       <section className="relative flex flex-col items-center justify-start min-h-[100dvh]">

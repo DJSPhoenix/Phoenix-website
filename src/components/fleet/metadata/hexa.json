@@ -1,0 +1,84 @@
+{
+  "modelFileName": "1450 hexa drone.gltf",
+  "cameraPresets": {
+    "top": [0, 2.2, 0.01],
+    "front": [0, 0, 2.2],
+    "side": [2.2, 0, 0],
+    "iso": [1.6, 1.6, 1.6]
+  },
+  "partCategories": [
+    {
+      "id": "Propeller",
+      "label": "Propellers",
+      "vOffset": 2.0,
+      "spin": true,
+      "description": "Six high-thrust propellers providing lift for the 1450 mm hexacopter."
+    },
+    {
+      "id": "Motor",
+      "label": "Brushless Motors",
+      "vOffset": 1.4,
+      "description": "Six brushless motors and motor casings powering the heavy-lift airframe."
+    },
+    {
+      "id": "Frame",
+      "label": "Carbon Frame",
+      "vOffset": 0.0,
+      "description": "Carbon plates, arms and brackets forming the structural hexacopter frame."
+    },
+    {
+      "id": "ESC",
+      "label": "40A ESCs",
+      "vOffset": 1.0,
+      "description": "XRotor 40A electronic speed controllers managing motor power delivery."
+    },
+    {
+      "id": "CUAV",
+      "label": "CUAV Flight Controller",
+      "vOffset": 1.0,
+      "description": "CUAV flight controller coordinating stabilization, navigation and mission control."
+    },
+    {
+      "id": "GPS",
+      "label": "Here3 GPS",
+      "vOffset": 2.4,
+      "description": "Here3 GPS and compass module providing accurate position and heading data."
+    },
+    {
+      "id": "RPi5",
+      "label": "Raspberry Pi 5",
+      "vOffset": 0.8,
+      "description": "Raspberry Pi 5 companion computer for onboard autonomy and perception workloads."
+    },
+    {
+      "id": "Battery",
+      "label": "Flight Battery",
+      "vOffset": -1.4,
+      "description": "Flight battery and power distribution hardware supplying the six-motor system."
+    },
+    {
+      "id": "Telemetry",
+      "label": "Telemetry Links",
+      "vOffset": 0.6,
+      "description": "Long-range telemetry and receiver hardware for command and vehicle status."
+    },
+    {
+      "id": "Landing",
+      "label": "Landing Gear",
+      "vOffset": -2.0,
+      "description": "Tall landing legs and supports providing clearance for the central payload bay."
+    }
+  ],
+  "partMappings": [
+    { "id": "Propeller", "keywords": ["propeller"] },
+    { "id": "Motor", "keywords": ["motor", "motor_casing"] },
+    { "id": "ESC", "keywords": ["esc", "xrotor"] },
+    { "id": "CUAV", "keywords": ["pixhawk", "cuav", "flight controller"] },
+    { "id": "GPS", "keywords": ["gps", "here3"] },
+    { "id": "RPi5", "keywords": ["jetson", "jnano", "raspberry", "rpi", "pi 5"] },
+    { "id": "Battery", "keywords": ["battery", "batery"] },
+    { "id": "Telemetry", "keywords": ["telemetry", "receiver", "reciever", "ubec"] },
+    { "id": "Landing", "keywords": ["leg", "landing"] },
+    { "id": "Frame", "keywords": ["plate", "arm", "bracket", "clip"] }
+  ]
+}
