@@ -39,12 +39,12 @@ const HowToSponsor = () => {
         {
           opacity: 1,
           y: 0,
-          duration: 0.6,
-          ease: "power2.out",
+          ease: "none",
           scrollTrigger: {
             trigger: ".how-header",
-            start: "top 92%",
-            toggleActions: "play none none reverse",
+            start: "top bottom",
+            end: "top 72%",
+            scrub: true,
           },
         }
       );
@@ -58,12 +58,12 @@ const HowToSponsor = () => {
           {
             opacity: 1,
             y: 0,
-            duration: 0.6,
-            ease: "power2.out",
+            ease: "none",
             scrollTrigger: {
               trigger: item,
-              start: "top 92%",
-              toggleActions: "play none none reverse",
+              start: "top bottom",
+              end: "top 72%",
+              scrub: true,
             },
           }
         );
@@ -78,12 +78,12 @@ const HowToSponsor = () => {
           {
             opacity: 0.4,
             scaleX: 1,
-            duration: 0.5,
-            ease: "power1.out",
+            ease: "none",
             scrollTrigger: {
               trigger: line,
-              start: "top 92%",
-              toggleActions: "play none none reverse",
+              start: "top bottom",
+              end: "top 72%",
+              scrub: true,
             },
           }
         );
@@ -106,17 +106,19 @@ const HowToSponsor = () => {
           {steps.slice(0, 3).map((s, idx) => (
             <div
               key={s.title}
-              className="how-step-item opacity-0 rounded-2xl border border-white/15 bg-white/5 p-4 sm:p-6 transition-all duration-300 hover:-translate-y-2 hover:scale-[1.01] hover:border-orange-500/40 hover:bg-white/10 hover:shadow-[0_0_18px_rgba(255,140,0,0.18)]"
+              className="how-step-item opacity-0"
             >
-              <div className="ui-text text-[10px] sm:text-xs text-gray-300 mb-1 sm:mb-2">
-                Step {idx + 1}
+              <div className="rounded-2xl border border-white/15 bg-white/5 p-4 sm:p-6 transition-all duration-300 hover:-translate-y-2 hover:scale-[1.01] hover:border-orange-500/40 hover:bg-white/10 hover:shadow-[0_0_18px_rgba(255,140,0,0.18)]">
+                <div className="ui-text text-[10px] sm:text-xs text-gray-300 mb-1 sm:mb-2">
+                  Step {idx + 1}
+                </div>
+                <p className="text-white font-semibold text-base sm:text-lg">
+                  {s.title}
+                </p>
+                <p className="text-gray-300 text-xs sm:text-sm mt-1">
+                  {s.detail}
+                </p>
               </div>
-              <p className="text-white font-semibold text-base sm:text-lg">
-                {s.title}
-              </p>
-              <p className="text-gray-300 text-xs sm:text-sm mt-1">
-                {s.detail}
-              </p>
             </div>
           ))}
         </div>
@@ -124,17 +126,19 @@ const HowToSponsor = () => {
           {steps.slice(3).map((s, idx) => (
             <div
               key={s.title}
-              className="how-step-item opacity-0 rounded-2xl border border-white/15 bg-white/5 p-4 sm:p-6 transition-all duration-300 hover:-translate-y-2 hover:scale-[1.01] hover:border-orange-500/40 hover:bg-white/10 hover:shadow-[0_0_18px_rgba(255,140,0,0.18)]"
+              className="how-step-item opacity-0"
             >
-              <div className="ui-text text-[10px] sm:text-xs text-gray-300 mb-1 sm:mb-2">
-                Step {idx + 4}
+              <div className="rounded-2xl border border-white/15 bg-white/5 p-4 sm:p-6 transition-all duration-300 hover:-translate-y-2 hover:scale-[1.01] hover:border-orange-500/40 hover:bg-white/10 hover:shadow-[0_0_18px_rgba(255,140,0,0.18)]">
+                <div className="ui-text text-[10px] sm:text-xs text-gray-300 mb-1 sm:mb-2">
+                  Step {idx + 4}
+                </div>
+                <p className="text-white font-semibold text-base sm:text-lg">
+                  {s.title}
+                </p>
+                <p className="text-gray-300 text-xs sm:text-sm mt-1">
+                  {s.detail}
+                </p>
               </div>
-              <p className="text-white font-semibold text-base sm:text-lg">
-                {s.title}
-              </p>
-              <p className="text-gray-300 text-xs sm:text-sm mt-1">
-                {s.detail}
-              </p>
             </div>
           ))}
         </div>
@@ -144,15 +148,17 @@ const HowToSponsor = () => {
         <div className="flex items-center justify-center max-w-6xl mx-auto">
           {steps.map((s, idx) => (
             <React.Fragment key={s.title}>
-              <div className="how-step-item opacity-0 flex flex-col items-center text-center min-w-[160px] lg:min-w-[180px] transition-all duration-300 hover:-translate-y-2 hover:scale-[1.03]">
-                <div className="ui-text w-16 h-16 lg:w-20 lg:h-20 text-2xl lg:text-4xl rounded-full border border-orange-500/60 bg-orange-500/10 text-white flex items-center justify-center mb-2">
-                  {idx + 1}
-                </div>
-                <div className="text-white font-semibold text-sm lg:text-base">
-                  {s.title}
-                </div>
-                <div className="text-gray-300 text-xs lg:text-sm max-w-[200px] lg:max-w-[240px]">
-                  {s.detail}
+              <div className="how-step-item opacity-0">
+                <div className="flex flex-col items-center text-center min-w-[160px] lg:min-w-[180px] transition-all duration-300 hover:-translate-y-2 hover:scale-[1.03]">
+                  <div className="ui-text w-16 h-16 lg:w-20 lg:h-20 text-2xl lg:text-4xl rounded-full border border-orange-500/60 bg-orange-500/10 text-white flex items-center justify-center mb-2">
+                    {idx + 1}
+                  </div>
+                  <div className="text-white font-semibold text-sm lg:text-base">
+                    {s.title}
+                  </div>
+                  <div className="text-gray-300 text-xs lg:text-sm max-w-[200px] lg:max-w-[240px]">
+                    {s.detail}
+                  </div>
                 </div>
               </div>
               {idx < steps.length - 1 && (

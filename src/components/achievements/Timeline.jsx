@@ -22,8 +22,6 @@ const Timeline = ({ data }) => {
       ? source.flat(Infinity)
       : source;
 
-    let globalIndex = 0; // Track global index across all cards
-
     return (flat || [])
       .filter(Boolean)
       .reverse()
@@ -33,13 +31,11 @@ const Timeline = ({ data }) => {
         content: (
           <div>
             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-x-6 sm:gap-x-8 lg:gap-x-12 gap-y-6 sm:gap-y-8 lg:gap-y-12">
-              {(group.achievements || []).map((a, idx) => {
-                const currentGlobalIndex = globalIndex++;
+              {(group.achievements || []).map((a) => {
                 return (
                   <TimelineCard
                     key={a.id}
                     item={a}
-                    index={currentGlobalIndex}
                   />
                 );
               })}
@@ -47,7 +43,7 @@ const Timeline = ({ data }) => {
           </div>
         ),
       }));
-  }, [data, defaultAchievements]);
+  }, [data]);
 
   // Measure track container height for the vertical progress
   useEffect(() => {
@@ -133,7 +129,8 @@ const Timeline = ({ data }) => {
         }
       });
 
-      // 3. Staggered card entrance ScrollTriggers in batch
+      // 3. Card state follows the Lenis-driven scroll position in both directions.
+      // ScrollTrigger maps the current scroll position; Lenis provides the smoothing.
       const cards = gsap.utils.toArray(".achievement-card-item");
       cards.forEach((card) => {
         gsap.fromTo(
@@ -146,9 +143,11 @@ const Timeline = ({ data }) => {
             ease: "none",
             scrollTrigger: {
               trigger: card,
-              start: "top 98%",
-              end: "top 65%",
-              scrub: 0.3,
+              // Begin as soon as the card enters the viewport so its lower edge
+              // never sits in an invisible dead zone at the bottom of the screen.
+              start: "top bottom",
+              end: "top 72%",
+              scrub: true,
             },
           }
         );

@@ -2,6 +2,8 @@ import guddu3DConfig from "./metadata/guddu.json";
 import rhino3DConfig from "./metadata/rhino.json";
 import aerothon20263DConfig from "./metadata/aerothon2026.json";
 import ares3DConfig from "./metadata/ares.json";
+import hexa3DConfig from "./metadata/hexa.json";
+import f4503DConfig from "./metadata/f450.json";
 
 // Load media from assets/Fleet
 const mediaMap = (() => {
@@ -14,7 +16,7 @@ const mediaMap = (() => {
     return Object.fromEntries(
       Object.entries(files).map(([path, url]) => [path.split("/").pop(), url]),
     );
-  } catch (e) {
+  } catch {
     return {};
   }
 })();
@@ -26,16 +28,26 @@ export const defaultDrones = [
     name: "Sonic",
     type: "Racing",
     year: "2024-2025",
-    image: mediaMap["Sonic.jpeg"],
+    image: mediaMap["Sonic-real.jpeg"],
     specs: { endurance: "11 min", range: "2.5 km", maxSpeed: "130 km/h" },
     highlightScore: 95,
+  },
+  {
+    id: "f450-2024",
+    name: "F450",
+    type: "Recon",
+    year: "2024-2025",
+    image: mediaMap["F450-real.jpeg"],
+    specs: { endurance: "In Development", range: "In Development" },
+    has3DModel: true,
+    ...f4503DConfig,
   },
   {
     id: "current-4",
     name: "Guddu",
     type: "Recon",
     year: "2024-2025",
-    image: mediaMap["Guddu.jpeg"],
+    image: mediaMap["Guddu-real.jpeg"],
     specs: { endurance: "8 min", range: "1.8 km", maxSpeed: "108 km/h" },
     has3DModel: true,
     ...guddu3DConfig,
@@ -45,7 +57,7 @@ export const defaultDrones = [
     name: "Rhino",
     type: "Heavy Lift",
     year: "2024-2025",
-    image: mediaMap["Rhino.jpeg"],
+    image: mediaMap["Mario-real.jpeg"],
     specs: { payload: "3.5 kg", endurance: "15 min", range: "4 km" },
     has3DModel: true,
     ...rhino3DConfig,
@@ -55,7 +67,7 @@ export const defaultDrones = [
     name: "Mario",
     type: "Autonomous Recon",
     year: "2025-2026",
-    image: mediaMap["Mario.jpeg"],
+    image: mediaMap["Rhino-real.jpeg"],
     specs: { endurance: "In Development", range: "In Development" },
     has3DModel: true,
     ...aerothon20263DConfig,
@@ -65,7 +77,7 @@ export const defaultDrones = [
     name: "Shadow",
     type: "Racing",
     year: "2025-2026",
-    image: mediaMap["Shadow.jpeg"],
+    image: mediaMap["Shadow-real.jpeg"],
     specs: { endurance: "11 min", range: "2.5 km", maxSpeed: "130 km/h" },
     highlightScore: 95,
   },
@@ -74,8 +86,10 @@ export const defaultDrones = [
     name: "Hexa",
     type: "Package Delivery",
     year: "2025-2026",
-    image: mediaMap["Hexa.jpeg"],
+    image: mediaMap["Hexa-real.jpeg"],
     specs: { payload: "2 kg", endurance: "N/A", range: "N/A" },
+    has3DModel: true,
+    ...hexa3DConfig,
     highlightScore: 80,
   },
   {

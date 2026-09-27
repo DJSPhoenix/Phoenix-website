@@ -18,12 +18,12 @@ const FAQ = ({ items }) => {
         {
           opacity: 1,
           y: 0,
-          duration: 0.6,
-          ease: "power2.out",
+          ease: "none",
           scrollTrigger: {
             trigger: ".faq-header",
-            start: "top 92%",
-            toggleActions: "play none none reverse",
+            start: "top bottom",
+            end: "top 72%",
+            scrub: true,
           },
         }
       );
@@ -37,12 +37,12 @@ const FAQ = ({ items }) => {
           {
             opacity: 1,
             y: 0,
-            duration: 0.6,
-            ease: "power2.out",
+            ease: "none",
             scrollTrigger: {
               trigger: item,
-              start: "top 92%",
-              toggleActions: "play none none reverse",
+              start: "top bottom",
+              end: "top 72%",
+              scrub: true,
             },
           }
         );

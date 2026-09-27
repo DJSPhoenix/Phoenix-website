@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { FaUsers, FaTrophy } from "react-icons/fa";
@@ -10,23 +10,8 @@ const iconMap = {
   drone: PiDroneFill,
 };
 
-const StatCard = ({ item, startCount, durationMs }) => {
-  const [value, setValue] = useState(0);
+const StatCard = ({ item, progress }) => {
   const cardRef = useRef(null);
-
-  useEffect(() => {
-    if (!startCount) return;
-    const target = item.target || 0;
-    const obj = { val: 0 };
-    gsap.to(obj, {
-      val: target,
-      duration: durationMs / 1000,
-      ease: "power2.out",
-      onUpdate: () => {
-        setValue(Math.round(obj.val));
-      },
-    });
-  }, [startCount, item.target, durationMs]);
 
   const onEnter = () => {
     gsap.to(cardRef.current, {
@@ -60,7 +45,7 @@ const StatCard = ({ item, startCount, durationMs }) => {
         <Icon className="w-5 sm:w-6 h-5 sm:h-6 text-black" />
       </div>
       <div className="font-ui font-bold text-3xl sm:text-4xl text-white mb-2">
-        {value}
+        {Math.round((item.target || 0) * progress)}
         {item.suffix || ""}
       </div>
       <div className="font-body text-sm sm:text-base text-gray-400 font-medium">
@@ -70,9 +55,9 @@ const StatCard = ({ item, startCount, durationMs }) => {
   );
 };
 
-const StatsCounter = ({ items = [], durationMs = 1200 }) => {
+const StatsCounter = ({ items = [] }) => {
   const containerRef = useRef(null);
-  const [startCount, setStartCount] = useState(false);
+  const [countProgress, setCountProgress] = useState(0);
 
   useGSAP(
     () => {
@@ -85,9 +70,9 @@ const StatsCounter = ({ items = [], durationMs = 1200 }) => {
           y: 0,
           scrollTrigger: {
             trigger: ".stats-header",
-            start: "top 95%",
-            end: "top 70%",
-            scrub: 1,
+            start: "top bottom",
+            end: "top 72%",
+            scrub: true,
           },
         }
       );
@@ -104,10 +89,10 @@ const StatsCounter = ({ items = [], durationMs = 1200 }) => {
           stagger: 0.1,
           scrollTrigger: {
             trigger: ".stats-grid",
-            start: "top 90%",
-            end: "top 60%",
-            scrub: 1,
-            onEnter: () => setStartCount(true),
+            start: "top bottom",
+            end: "top 72%",
+            scrub: true,
+            onUpdate: (self) => setCountProgress(self.progress),
           },
         }
       );
@@ -143,8 +128,7 @@ const StatsCounter = ({ items = [], durationMs = 1200 }) => {
             <StatCard
               key={item.label}
               item={item}
-              startCount={startCount}
-              durationMs={durationMs}
+              progress={countProgress}
             />
           ))}
         </div>

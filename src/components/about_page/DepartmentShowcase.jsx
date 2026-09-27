@@ -105,9 +105,9 @@ const DepartmentShowcase = ({ items = [], fallbackImage }) => {
           y: 0,
           scrollTrigger: {
             trigger: ".departments-header",
-            start: "top 95%",
-            end: "top 70%",
-            scrub: 1,
+            start: "top bottom",
+            end: "top 72%",
+            scrub: true,
           },
         }
       );
@@ -124,9 +124,9 @@ const DepartmentShowcase = ({ items = [], fallbackImage }) => {
             x: 0,
             scrollTrigger: {
               trigger: row,
-              start: "top 90%",
-              end: "top 60%",
-              scrub: 1,
+              start: "top bottom",
+              end: "top 72%",
+              scrub: true,
             },
           }
         );

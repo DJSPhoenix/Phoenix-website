@@ -51,7 +51,7 @@ const getCategoryStyles = (category) => {
   };
 };
 
-const TimelineCard = ({ item, index }) => {
+const TimelineCard = ({ item }) => {
   const cardRef = useRef(null);
   const [coords, setCoords] = useState({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
@@ -89,56 +89,60 @@ const TimelineCard = ({ item, index }) => {
 
   return (
     <div
-      ref={cardRef}
-      onMouseEnter={onEnter}
-      onMouseMove={onMove}
-      onMouseLeave={onLeave}
-      className="achievement-card-item group relative overflow-hidden rounded-2xl border transition-all duration-300 hover:-translate-y-1 w-full opacity-0"
-      style={{
-        background: hovered 
-          ? `radial-gradient(350px circle at ${coords.x}px ${coords.y}px, ${catStyle.glow}, transparent 80%), rgba(10, 10, 10, 0.7)`
-          : "rgba(10, 10, 10, 0.4)",
-        borderColor: hovered ? `hsla(${catStyle.hue}, 70%, 50%, 0.35)` : "rgba(255, 255, 255, 0.06)",
-        boxShadow: hovered ? `0 0 30px hsla(${catStyle.hue}, 90%, 60%, 0.04)` : "none",
-        backdropFilter: "blur(20px)",
-        WebkitBackdropFilter: "blur(20px)"
-      }}
+      className="achievement-card-item w-full opacity-0"
     >
-      {/* Content wrapper */}
-      <div className="relative z-10 p-6 sm:p-8 flex flex-col justify-between h-full min-h-[180px] sm:min-h-[200px]">
-        <div>
-          {/* Metadata Top Row */}
-          <div className="flex items-center justify-between gap-4 mb-4">
-            <span
-              className={`font-mono text-[9px] sm:text-[10px] tracking-widest uppercase px-2.5 py-1 border rounded-full ${catStyle.bg}`}
-            >
-              {item.category}
-            </span>
-            
-            {/* Status Indicator */}
-            <div className="flex items-center gap-1.5 font-mono text-[9px] sm:text-[10px] text-neutral-500 uppercase tracking-widest">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_6px_#10b981]" />
-              {item.status || "Completed"}
-            </div>
-          </div>
+      <div
+        ref={cardRef}
+        onMouseEnter={onEnter}
+        onMouseMove={onMove}
+        onMouseLeave={onLeave}
+        className="group relative overflow-hidden rounded-2xl border transition-all duration-300 w-full"
+        style={{
+          background: hovered
+            ? `radial-gradient(350px circle at ${coords.x}px ${coords.y}px, ${catStyle.glow}, transparent 80%), rgba(10, 10, 10, 0.7)`
+            : "rgba(10, 10, 10, 0.4)",
+          borderColor: hovered ? `hsla(${catStyle.hue}, 70%, 50%, 0.35)` : "rgba(255, 255, 255, 0.06)",
+          boxShadow: hovered ? `0 0 30px hsla(${catStyle.hue}, 90%, 60%, 0.04)` : "none",
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)"
+        }}
+      >
+        {/* Content wrapper */}
+        <div className="relative z-10 p-6 sm:p-8 flex flex-col justify-between h-full min-h-[180px] sm:min-h-[200px]">
+          <div>
+            {/* Metadata Top Row */}
+            <div className="flex items-center justify-between gap-4 mb-4">
+              <span
+                className={`font-mono text-[9px] sm:text-[10px] tracking-widest uppercase px-2.5 py-1 border rounded-full ${catStyle.bg}`}
+              >
+                {item.category}
+              </span>
 
-          {/* Title & Rank */}
-          <div className="mb-4">
-            <h4 className="font-display text-lg sm:text-xl md:text-2xl font-bold text-white leading-snug">
-              {displayTitle}
-            </h4>
-            {displayAward && (
-              <div className="font-mono text-[11px] sm:text-xs text-[#ff8c00] font-black uppercase tracking-wider flex items-center gap-1.5 mt-2 bg-[#ff8c00]/[0.06] border border-[#ff8c00]/25 rounded-md px-2.5 py-1 w-fit shadow-[0_0_10px_rgba(255,140,0,0.05)]">
-                <span className="text-[10px] text-[#ff8c00]">✦</span>
-                {displayAward}
+              {/* Status Indicator */}
+              <div className="flex items-center gap-1.5 font-mono text-[9px] sm:text-[10px] text-neutral-500 uppercase tracking-widest">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_6px_#10b981]" />
+                {item.status || "Completed"}
               </div>
-            )}
-          </div>
+            </div>
 
-          {/* Description */}
-          <p className="font-body text-[13.5px] sm:text-[14.5px] text-neutral-400 leading-relaxed border-l border-white/[0.04] pl-4">
-            {item.description}
-          </p>
+            {/* Title & Rank */}
+            <div className="mb-4">
+              <h4 className="font-display text-lg sm:text-xl md:text-2xl font-bold text-white leading-snug">
+                {displayTitle}
+              </h4>
+              {displayAward && (
+                <div className="font-mono text-[11px] sm:text-xs text-[#ff8c00] font-black uppercase tracking-wider flex items-center gap-1.5 mt-2 bg-[#ff8c00]/[0.06] border border-[#ff8c00]/25 rounded-md px-2.5 py-1 w-fit shadow-[0_0_10px_rgba(255,140,0,0.05)]">
+                  <span className="text-[10px] text-[#ff8c00]">✦</span>
+                  {displayAward}
+                </div>
+              )}
+            </div>
+
+            {/* Description */}
+            <p className="font-body text-[13.5px] sm:text-[14.5px] text-neutral-400 leading-relaxed border-l border-white/[0.04] pl-4">
+              {item.description}
+            </p>
+          </div>
         </div>
       </div>
     </div>

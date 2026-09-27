@@ -191,9 +191,9 @@ const CompetitionsSection = () => {
           y: 0,
           scrollTrigger: {
             trigger: ".competitions-header",
-            start: "top 95%",
-            end: "top 65%",
-            scrub: 1,
+            start: "top bottom",
+            end: "top 72%",
+            scrub: true,
           },
         },
       );
@@ -210,9 +210,9 @@ const CompetitionsSection = () => {
             y: 0,
             scrollTrigger: {
               trigger: card,
-              start: "top 90%",
-              end: "top 55%",
-              scrub: 1,
+              start: "top bottom",
+              end: "top 72%",
+              scrub: true,
             },
           },
         );

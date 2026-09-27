@@ -13,7 +13,7 @@ const PostsGrid = () => {
   useGSAP(
     () => {
       const cards = gsap.utils.toArray(".post-card-item");
-      cards.forEach((card, index) => {
+      cards.forEach((card) => {
         gsap.fromTo(
           card,
           { opacity: 0, y: 30, scale: 0.98 },
@@ -24,9 +24,9 @@ const PostsGrid = () => {
             ease: "none",
             scrollTrigger: {
               trigger: card,
-              start: "top 98%",
+              start: "top bottom",
               end: "top 72%",
-              scrub: 0.3,
+              scrub: true,
             },
           }
         );

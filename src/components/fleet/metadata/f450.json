@@ -1,0 +1,63 @@
+{
+  "modelFileName": "f450 drone.gltf",
+  "cameraPresets": {
+    "top": [0, 1.8, 0.01],
+    "front": [0, 0, 1.8],
+    "side": [1.8, 0, 0],
+    "iso": [1.2, 1.2, 1.2]
+  },
+  "partCategories": [
+    {
+      "id": "Propeller",
+      "label": "10x4.5 Propellers",
+      "vOffset": 0.8,
+      "spin": true,
+      "description": "10x4.5 propellers providing efficient lift for the F450 platform."
+    },
+    {
+      "id": "Motor",
+      "label": "Brushless Motors",
+      "vOffset": 0.6,
+      "description": "Holybro 2216-880KV brushless motors driving the four-rotor platform."
+    },
+    {
+      "id": "Frame",
+      "label": "F450 Frame",
+      "vOffset": 0.0,
+      "description": "Rigid F450 frame plates and arms forming the main structural assembly."
+    },
+    {
+      "id": "Canopy",
+      "label": "Protective Canopy",
+      "vOffset": 0.7,
+      "description": "Protective canopy shell covering the central avionics and payload bay."
+    },
+    {
+      "id": "Battery",
+      "label": "Flight Battery",
+      "vOffset": -0.6,
+      "description": "Central LiPo battery pack supplying the flight electronics and motors."
+    },
+    {
+      "id": "GPS",
+      "label": "GPS Module",
+      "vOffset": 1.0,
+      "description": "M8N GPS and compass assembly for navigation and position hold."
+    },
+    {
+      "id": "Radio",
+      "label": "Radio Link",
+      "vOffset": 0.4,
+      "description": "Radio and telemetry hardware supporting remote command and status links."
+    }
+  ],
+  "partMappings": [
+    { "id": "Propeller", "keywords": ["propeller"] },
+    { "id": "Motor", "keywords": ["motor"] },
+    { "id": "Frame", "keywords": ["arm", "plate", "antivib", "mount"] },
+    { "id": "Canopy", "keywords": ["canopy"] },
+    { "id": "Battery", "keywords": ["battery", "battry"] },
+    { "id": "GPS", "keywords": ["gps", "m8n"] },
+    { "id": "Radio", "keywords": ["radio", "radiolink"] }
+  ]
+}

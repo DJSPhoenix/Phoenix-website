@@ -50,34 +50,38 @@ const SupportCard = ({ card }) => {
 
   return (
     <div
-      ref={cardRef}
-      onMouseEnter={onEnter}
-      onMouseMove={onMove}
-      onMouseLeave={onLeave}
-      className="ways-card-item opacity-0 h-full rounded-2xl border transition-all duration-300 w-full cursor-default"
-      style={{
-        background: hovered 
-          ? `radial-gradient(350px circle at ${coords.x}px ${coords.y}px, ${style.glow}, transparent 80%), rgba(10, 10, 10, 0.7)`
-          : "rgba(10, 10, 10, 0.4)",
-        borderColor: hovered ? `hsla(${style.hue}, 70%, 50%, 0.35)` : "rgba(255, 255, 255, 0.06)",
-        boxShadow: hovered ? `0 0 30px hsla(${style.hue}, 90%, 60%, 0.04)` : "none",
-        backdropFilter: "blur(20px)",
-        WebkitBackdropFilter: "blur(20px)"
-      }}
+      className="ways-card-item opacity-0 h-full w-full"
     >
-      <div className="relative p-6 sm:p-8 flex flex-col justify-between h-full min-h-[220px]">
-        <div>
-          <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-3">
-            {card.title}
-          </h3>
-          <p className="text-sm sm:text-base text-gray-300 mb-5 leading-relaxed">
-            {card.description}
-          </p>
-          <ul className="list-disc list-inside text-xs sm:text-sm text-neutral-400 space-y-2 border-l border-white/[0.04] pl-4">
-            {card.highlights?.map((h) => (
-              <li key={h} className="hover:text-white transition-colors duration-200">{h}</li>
-            ))}
-          </ul>
+      <div
+        ref={cardRef}
+        onMouseEnter={onEnter}
+        onMouseMove={onMove}
+        onMouseLeave={onLeave}
+        className="relative h-full rounded-2xl border transition-all duration-300 w-full cursor-default"
+        style={{
+          background: hovered
+            ? `radial-gradient(350px circle at ${coords.x}px ${coords.y}px, ${style.glow}, transparent 80%), rgba(10, 10, 10, 0.7)`
+            : "rgba(10, 10, 10, 0.4)",
+          borderColor: hovered ? `hsla(${style.hue}, 70%, 50%, 0.35)` : "rgba(255, 255, 255, 0.06)",
+          boxShadow: hovered ? `0 0 30px hsla(${style.hue}, 90%, 60%, 0.04)` : "none",
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)"
+        }}
+      >
+        <div className="relative p-6 sm:p-8 flex flex-col justify-between h-full min-h-[220px]">
+          <div>
+            <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-3">
+              {card.title}
+            </h3>
+            <p className="text-sm sm:text-base text-gray-300 mb-5 leading-relaxed">
+              {card.description}
+            </p>
+            <ul className="list-disc list-inside text-xs sm:text-sm text-neutral-400 space-y-2 border-l border-white/[0.04] pl-4">
+              {card.highlights?.map((h) => (
+                <li key={h} className="hover:text-white transition-colors duration-200">{h}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -96,12 +100,12 @@ const WaysToSupport = ({ items }) => {
         {
           opacity: 1,
           y: 0,
-          duration: 0.6,
-          ease: "power2.out",
+          ease: "none",
           scrollTrigger: {
             trigger: ".ways-header",
-            start: "top 92%",
-            toggleActions: "play none none reverse",
+            start: "top bottom",
+            end: "top 72%",
+            scrub: true,
           },
         }
       );
@@ -115,12 +119,12 @@ const WaysToSupport = ({ items }) => {
           {
             opacity: 1,
             y: 0,
-            duration: 0.7,
-            ease: "power2.out",
+            ease: "none",
             scrollTrigger: {
               trigger: card,
-              start: "top 92%",
-              toggleActions: "play none none reverse",
+              start: "top bottom",
+              end: "top 72%",
+              scrub: true,
             },
           }
         );

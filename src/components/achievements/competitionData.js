@@ -167,6 +167,22 @@ export const achievements = [
           category: "Global Competition",
           status: "completed",
         },
+        {
+          id: 17,
+          title: "SAE AeroTHON 2025 - Finalist",
+          description:
+            "Selected as a finalist in SAE AeroTHON 2025, advancing through a competitive field of student engineering teams.",
+          category: "National Competition",
+          status: "completed",
+        },
+        {
+          id: 18,
+          title: "NIDAR 2025 Design Presentation - 17th Rank Nationally",
+          description:
+            "Secured 17th rank nationally for the design presentation at the National Innovation Challenge for Drone Application and Research.",
+          category: "Design Challenge",
+          status: "completed",
+        },
       ],
     },
   ],
